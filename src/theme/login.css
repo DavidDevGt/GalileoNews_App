@@ -53,20 +53,6 @@ body ion-content, body .ion-page, body #background-content {
   padding: 60px 50px 40px;
 }
 
-.login__background .login__title {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 1rem;
-}
-
-.login__background .login__title span {
-  color: rgb(102, 102, 102);
-  font-weight: bold;
-  font-size: 18px;
-}
-
 @media screen and (max-width: 550px) {
   .login__background {
     width: auto;
@@ -85,9 +71,8 @@ body ion-content, body .ion-page, body #background-content {
   width: 100% !important;
   background: none;
   border: 1px solid rgb(0, 0, 0);
-  font-size: 1.3em;
   color: rgb(0, 0, 0);
-  padding: 0.2em;
+  padding: 0.45rem;
 }
 
 .form-widget input[type="text"]:focus,
@@ -105,12 +90,13 @@ body ion-content, body .ion-page, body #background-content {
   background: var(--main-galileo-color-focus);
 }
 
-.form-widget input[type="checkbox"] {
-  margin-top: 2em;
-}
-
 .form-widget label {
   font-size: 0.9em;
+}
+
+.form-widget .label-text {
+  font-size: 1rem;
+  padding-bottom: 0.75rem;
 }
 
 .form-actions input[type="submit"] {
@@ -131,14 +117,6 @@ body ion-content, body .ion-page, body #background-content {
 .form-widget {
   padding-bottom: 16px;
   position: relative;
-}
-
-.login__background .Faqs2 a {
-  margin: 0.2em 0.5em !important;
-  font-size: 0.8em !important;
-  color: var(--link-galileo-color) !important;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 /*focus*/
@@ -178,11 +156,11 @@ input[type='submit'] {
 }
 
 .or {
-  padding-bottom: 20px;
+  padding-bottom: 1.5rem;
   text-align: center;
-  color: #ddd;
+  color: #151515;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.75rem;
   position: relative;
 }
 
@@ -213,7 +191,6 @@ input[type='submit'] {
   background: #1a73e8 none repeat scroll 0% 0%;
   border: none;
   padding: 0.25rem;
-  margin-top: 10px;
   color: #FFF;
   cursor: pointer;
 }
@@ -223,11 +200,10 @@ input[type='submit'] {
 }
 
 .google_signin .google__icon {
-  background-color: #ffffff9c;
-  height: 1.5rem;
-  width: 1.5rem;
-  padding: 0.25rem;
-  margin-right: 1.5rem;
+  height: 2rem;
+  padding-bottom: 0.15rem;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
   pointer-events: none;
 }
 .google_signin span {
@@ -236,13 +212,7 @@ input[type='submit'] {
 
 .cont-standard {
   display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.cont-lost-password {
-  display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
 }
 
