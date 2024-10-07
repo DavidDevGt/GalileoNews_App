@@ -1,0 +1,31 @@
+
+.ion-palette-dark ion-content, .ion-palette-dark .ion-page, .ion-palette-dark #background-content {
+  background-color: #000000;
+}
+
+.ion-palette-dark .login__background {
+  background-color: rgb(28, 28, 29);
+}
+
+.ion-palette-dark .form-widget input[type="text"],
+.ion-palette-dark .form-widget input[type="password"] {
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.ion-palette-dark .login__background .login__title span {
+  color: rgb(255, 255, 255);
+}
+
+.ion-palette-dark .form-widget input[type="text"]:focus,
+.ion-palette-dark .form-widget input[type="password"]:focus {
+  background: rgb(0, 0, 0);
+}
+
+.ion-palette-dark  .form-actions input[type="submit"] {
+  background: var(--link-galileo-color) none repeat scroll 0% 0%;
+}
+
+.ion-palette-dark .form-actions input[type="submit"]:hover {
+  background: var(--link-galileo-color-focus);
+}

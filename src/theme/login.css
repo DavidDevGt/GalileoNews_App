@@ -1,0 +1,252 @@
+
+:root {
+  --main-galileo-color: rgb(184, 154, 89);
+  --main-galileo-color-focus: rgb(202, 166, 89);
+  --link-galileo-color: rgb(180, 95, 8);
+  --link-galileo-color-focus: rgb(153, 83, 14);
+}
+
+body,
+html {
+  height: 100%;
+  color: black;
+}
+
+body ion-content, body .ion-page, body #background-content {
+  margin: 0;
+  background-color: rgb(102, 102, 102);
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.topbar {
+  display: flex;
+  height: auto;
+  padding: 3rem;
+}
+
+.topbar .topbar__title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 1rem;
+  border: solid 2px #FFF;
+  border-width: 0 0 2px 0;
+}
+
+.topbar .topbar__title .topbar__icon {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1.5rem;
+  color: white;
+}
+
+.topbar .topbar__title span {
+  color: #FFF;
+  font-size: 20px;
+}
+
+.login__background {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #FFF;
+  border-radius: 25px;
+  padding: 60px 50px 40px;
+}
+
+.login__background .login__title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.login__background .login__title span {
+  color: rgb(102, 102, 102);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 550px) {
+  .login__background {
+    width: auto;
+    margin: 0 5%;
+    padding: 60px 15px 40px;
+  }
+}
+
+.login__background .container-form {
+  width: 100%;
+  margin: auto;
+}
+
+.form-widget input[type="text"],
+.form-widget input[type="password"] {
+  width: 100% !important;
+  background: none;
+  border: 1px solid rgb(0, 0, 0);
+  font-size: 1.3em;
+  color: rgb(0, 0, 0);
+  padding: 0.2em;
+}
+
+.form-widget input[type="text"]:focus,
+.form-widget input[type="password"]:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+*:focus {
+  outline: none;
+}
+
+.form-actions input[type="submit"]:focus {
+  outline: none;
+  background: var(--main-galileo-color-focus);
+}
+
+.form-widget input[type="checkbox"] {
+  margin-top: 2em;
+}
+
+.form-widget label {
+  font-size: 0.9em;
+}
+
+.form-actions input[type="submit"] {
+  width: 100%;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 0.5em 0em;
+  background: var(--main-galileo-color) none repeat scroll 0% 0%;
+  border: none;
+  margin-top: 10px;
+}
+
+.form-actions input[type="submit"]:hover {
+  background: var(--main-galileo-color-focus) none repeat scroll 0% 0%;
+  cursor: pointer;
+}
+
+.form-widget {
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.login__background .Faqs2 a {
+  margin: 0.2em 0.5em !important;
+  font-size: 0.8em !important;
+  color: var(--link-galileo-color) !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*focus*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type='submit'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@media only screen and (max-width : 480px) {
+  .sign-in-button {
+    margin: 5px 0 12px;
+  }
+
+  .form-widget label {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .google-button__text {
+    width: 69px;
+    overflow: hidden;
+  }
+}
+
+.sign-in-button {
+  margin: 30px 0 12px;
+}
+
+.or {
+  padding-bottom: 20px;
+  text-align: center;
+  color: #ddd;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+}
+
+.or:before, .or:after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  width: calc(43% - 20px);
+  height: 1px;
+  background-color: #505050;
+  box-sizing: border-box;
+}
+
+.or:before {
+  left:20px;
+}
+
+.or:after {
+  right:20px;
+}
+
+.google_signin {
+  display: flex;
+  width: 100%;
+  font-size: 1.1em;
+  align-items: center;
+  justify-content: center;
+  background: #1a73e8 none repeat scroll 0% 0%;
+  border: none;
+  padding: 0.25rem;
+  margin-top: 10px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.google_signin:hover {
+  background: #3b82df none repeat scroll 0% 0%;
+}
+
+.google_signin .google__icon {
+  background-color: #ffffff9c;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.25rem;
+  margin-right: 1.5rem;
+  pointer-events: none;
+}
+.google_signin span {
+  pointer-events: none;
+}
+
+.cont-standard {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cont-lost-password {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.w-grow {
+  width: 1px;
+  flex-grow: 1;
+}
