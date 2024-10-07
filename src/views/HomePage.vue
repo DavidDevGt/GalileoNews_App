@@ -18,7 +18,7 @@
       </div>
       <div class="login__background">
         <div class="login__title">
-          <span>Galileo News</span>
+          <span class="title-login">Galileo News</span>
         </div>
         <div id="register-login">
           <form id="login" name="login" class="margin-form" novalidate @submit="(event) => { event.preventDefault() }" style="margin: 0px;">

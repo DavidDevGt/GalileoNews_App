@@ -15,7 +15,7 @@ html {
 body ion-content, body .ion-page, body #background-content {
   margin: 0;
   background-color: rgb(102, 102, 102);
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Montserrat-Medium', sans-serif;
 }
 
 .topbar {
@@ -64,7 +64,7 @@ body ion-content, body .ion-page, body #background-content {
 .login__background .login__title span {
   color: rgb(102, 102, 102);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 @media screen and (max-width: 550px) {
@@ -88,6 +88,7 @@ body ion-content, body .ion-page, body #background-content {
   font-size: 1.3em;
   color: rgb(0, 0, 0);
   padding: 0.2em;
+  border-radius: 5px;
 }
 
 .form-widget input[type="text"]:focus,
@@ -121,6 +122,7 @@ body ion-content, body .ion-page, body #background-content {
   background: var(--main-galileo-color) none repeat scroll 0% 0%;
   border: none;
   margin-top: 10px;
+  border-radius: 5px; 
 }
 
 .form-actions input[type="submit"]:hover {
@@ -216,6 +218,7 @@ input[type='submit'] {
   margin-top: 10px;
   color: #FFF;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .google_signin:hover {
