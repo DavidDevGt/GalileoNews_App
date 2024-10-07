@@ -26,12 +26,12 @@
             <div><input type="hidden" name="form:id" value="login"></div>
             <div class="container-form">
               <div class="form-widget">
-                <label for="email" class="lector">Ingresar Usuario o Email </label>
-                <input type="text" name="email" value="" id="email" style="width: 150px" placeholder="Correo Electrónico">
+                <ion-input label-placement="stacked" id="email" type="text" name="email" label="Ingresar Usuario o Email"  placeholder="Correo Electrónico" />
               </div>
               <div class="form-widget">
-                <label for="password" class="lector">Ingresar Contraseña </label>
-                <input type="password" name="password" id="password" style="width: 150px" placeholder="Contraseña">
+                <ion-input label-placement="stacked" id="password" type="password" name="password" label="Ingresar Contraseña"  placeholder="Contraseña" >
+                  <ion-input-password-toggle></ion-input-password-toggle>
+                </ion-input>
                 <div class="cont-lost-password">
                   <span class="Faqs2">
                     <a href="#" class="button">¿Olvidó su
@@ -90,7 +90,7 @@
 </template>
 
 <script setup>
-  import { IonPage, IonIcon, IonButton, IonButtons } from '@ionic/vue';
+  import { IonPage, IonIcon, IonButton, IonButtons, IonInput, IonInputPasswordToggle } from '@ionic/vue';
   import { happyOutline, sunnyOutline, moon } from 'ionicons/icons'
   import { ref } from 'vue'
   const onSubmitForm = (event) => {

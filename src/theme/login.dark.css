@@ -16,3 +16,16 @@
 .ion-palette-dark .login__background .login__title span {
   color: rgb(255, 255, 255);
 }
+
+.ion-palette-dark .form-widget input[type="text"]:focus,
+.ion-palette-dark .form-widget input[type="password"]:focus {
+  background: rgb(0, 0, 0);
+}
+
+.ion-palette-dark  .form-actions input[type="submit"] {
+  background: var(--link-galileo-color) none repeat scroll 0% 0%;
+}
+
+.ion-palette-dark .form-actions input[type="submit"]:hover {
+  background: var(--link-galileo-color-focus);
+}

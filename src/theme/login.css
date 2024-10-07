@@ -3,6 +3,7 @@
   --main-galileo-color: rgb(184, 154, 89);
   --main-galileo-color-focus: rgb(202, 166, 89);
   --link-galileo-color: rgb(180, 95, 8);
+  --link-galileo-color-focus: rgb(153, 83, 14);
 }
 
 body,
@@ -86,7 +87,7 @@ body ion-content, body .ion-page, body #background-content {
   border: 1px solid rgb(0, 0, 0);
   font-size: 1.3em;
   color: rgb(0, 0, 0);
-  padding: 0.2em 0em;
+  padding: 0.2em;
 }
 
 .form-widget input[type="text"]:focus,
