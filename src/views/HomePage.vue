@@ -26,10 +26,24 @@
             <div><input type="hidden" name="form:id" value="login"></div>
             <div class="container-form">
               <div class="form-widget">
-                <ion-input label-placement="stacked" id="email" type="text" name="email" label="Ingresar Usuario o Email"  placeholder="Correo Electrónico" />
+                <ion-input
+                  ref="inpEmail"
+                  label-placement="stacked"
+                  id="email"
+                  type="text"
+                  name="email"
+                  label="Ingresar Usuario o Email"
+                  placeholder="Correo Electrónico" />
               </div>
               <div class="form-widget">
-                <ion-input label-placement="stacked" id="password" type="password" name="password" label="Ingresar Contraseña"  placeholder="Contraseña" >
+                <ion-input
+                  ref="inpPassword"
+                  label-placement="stacked"
+                  id="password"
+                  type="password"
+                  name="password"
+                  label="Ingresar Contraseña"
+                  placeholder="Contraseña" >
                   <ion-input-password-toggle></ion-input-password-toggle>
                 </ion-input>
                 <div class="cont-lost-password">
@@ -93,11 +107,25 @@
   import { IonPage, IonIcon, IonButton, IonButtons, IonInput, IonInputPasswordToggle } from '@ionic/vue';
   import { happyOutline, sunnyOutline, moon } from 'ionicons/icons'
   import { ref } from 'vue'
-  const onSubmitForm = (event) => {
-    console.log('event', event)
-  }
   
   const isDark = ref(false);
+  const inpEmail = ref();
+  const inpPassword = ref();
+
+  const onSubmitForm = () => {
+    const formModel = {}
+    const arrInputs = []
+    arrInputs.push(inpEmail.value)
+    arrInputs.push(inpPassword.value)
+    arrInputs.forEach((inputCmp) => {
+      if (inputCmp !== undefined) {
+        const inpName = inputCmp.$el.id
+        const inpValue = inputCmp.$el.value
+        formModel[inpName] = inpValue
+      }
+    })
+    console.log('formModel', JSON.stringify(formModel))
+  }
 
   // Use matchMedia to check the user preference
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
