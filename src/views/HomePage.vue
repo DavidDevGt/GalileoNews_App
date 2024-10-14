@@ -6,7 +6,7 @@
           <div>
             <ion-icon :icon="happyOutline" class="topbar__icon"></ion-icon>
           </div>
-          <span>GalileoNews App</span>
+          <span>GalileoNews</span>
           <div class="w-grow"></div>
           <ion-buttons>
             <ion-button color="dark" @click="toggleChange">
@@ -16,6 +16,9 @@
         </div>
       </div>
       <div class="login__background">
+        <div class="login__title">
+          <span>Galileo News</span>
+        </div>
         <div id="register-login">
           <form id="login" name="login" class="margin-form" @submit.prevent="onSubmitForm">
             <div class="container-form">
