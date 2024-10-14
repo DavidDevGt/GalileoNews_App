@@ -16,6 +16,7 @@
         </div>
       </div>
       <div class="login__background">
+        <h1 id="tituloPrincipal">Galileo News</h1>
         <div id="register-login">
           <form id="login" name="login" class="margin-form" @submit.prevent="onSubmitForm">
             <div class="container-form">
