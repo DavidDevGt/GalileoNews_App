@@ -220,3 +220,8 @@ input[type='submit'] {
   width: 1px;
   flex-grow: 1;
 }
+
+.form-actions ion-button {
+  --background: var(--main-galileo-color);
+  --background-hover: var(--main-galileo-color-focus);
+}
