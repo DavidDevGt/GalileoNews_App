@@ -6,7 +6,7 @@
           <div>
             <ion-icon :icon="happyOutline" class="topbar__icon"></ion-icon>
           </div>
-          <span>GalileoNewsnpm App</span>
+          <span>GalileoNews</span>
           <div class="w-grow"></div>
           <ion-buttons>
             <ion-button color="dark" @click="toggleChange">
