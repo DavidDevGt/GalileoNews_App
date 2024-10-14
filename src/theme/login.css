@@ -15,7 +15,7 @@ html {
 body ion-content, body .ion-page, body #background-content {
   margin: 0;
   background-color: rgb(102, 102, 102);
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Montserrat-Medium', sans-serif;
 }
 
 .topbar {
@@ -53,6 +53,20 @@ body ion-content, body .ion-page, body #background-content {
   padding: 60px 50px 40px;
 }
 
+.login__background .login__title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.login__background .login__title span {
+  color: rgb(102, 102, 102);
+  font-weight: bold;
+  font-size: 18px;
+}
+
 @media screen and (max-width: 550px) {
   .login__background {
     width: auto;
@@ -72,7 +86,7 @@ body ion-content, body .ion-page, body #background-content {
   background: none;
   border: 1px solid rgb(0, 0, 0);
   color: rgb(0, 0, 0);
-  padding: 0.45rem;
+  padding: 0.2em;
 }
 
 .form-widget input[type="text"]:focus,
@@ -107,6 +121,7 @@ body ion-content, body .ion-page, body #background-content {
   background: var(--main-galileo-color) none repeat scroll 0% 0%;
   border: none;
   margin-top: 10px;
+  border-radius: 5px; 
 }
 
 .form-actions input[type="submit"]:hover {
@@ -193,6 +208,7 @@ input[type='submit'] {
   padding: 0.25rem;
   color: #FFF;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .google_signin:hover {
@@ -221,9 +237,7 @@ input[type='submit'] {
   flex-grow: 1;
 }
 
-#tituloPrincipal{
-  color: rgb(127, 127, 138);
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
+.form-actions ion-button {
+  --background: var(--main-galileo-color);
+  --background-hover: var(--main-galileo-color-focus);
 }
