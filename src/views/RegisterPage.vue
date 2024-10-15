@@ -9,12 +9,13 @@
           <span :class="{'dark-text': isDark, 'light-text': !isDark}">GalileoNews - Registro</span>
           <div class="w-grow"></div>
           <ion-buttons>
-            <ion-button :color="isDark ? 'light' : 'dark'" @click="toggleChange">
+            <ion-button :color="isDark ? 'light' : 'dark'" class="theme-toggle-button" @click="toggleChange">
               <ion-icon :icon="isDark ? sunnyOutline : moon" class="topbar__icon"></ion-icon>
             </ion-button>
           </ion-buttons>
         </div>
-      </div>
+      </div>  
+      <h1 style="text-align: center; color: darkgray;" >Galileo News</h1>
       <div class="register__background">
         <div id="register-form" class="centered-box" :class="{ 'dark-box': isDark }">
           <form id="register" name="register" class="margin-form" @submit.prevent="onSubmitForm">
@@ -41,7 +42,7 @@
             </div>
           </form>
           <div class="sign-in-button">
-            <div class="or">O</div>
+            <div class="or"></div>
             <div class="google_signin" @click="onGoogleSignIn">
               <div class="google__icon">
                 <ion-icon :icon="logoGoogle"></ion-icon>
@@ -115,7 +116,7 @@ const toggleChange = () => {
 <style scoped>
 /* Fondo claro y oscuro */
 ion-content::part(background) {
-  background-color: var(--ion-background-color, white);
+  background-color: var(--ion-background-color, rgb(255, 255, 255));
 }
 
 .ion-palette-dark ion-content::part(background) {
@@ -124,7 +125,8 @@ ion-content::part(background) {
 
 /* Estilos para el cuadro en modo oscuro */
 .dark-box {
-  background-color: black;
+  background-color: #121212;
+  color: #f5f5f5;
 }
 
 /* Estilos para el texto */
@@ -137,7 +139,7 @@ ion-content::part(background) {
 }
 
 .error-message {
-  color: red;
+  color: #ff8800;
   font-size: 0.7em;
 }
 
@@ -155,12 +157,14 @@ ion-content::part(background) {
   font-size: 1.5em;
 }
 
-ion-button {
-  --background: var(--ion-color-dark);
+ion-button[aria-label="Change Theme"] {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-dark);
 }
 
-.ion-palette-dark ion-button {
-  --background: var(--ion-color-light);
+.ion-palette-dark ion-button[aria-label="Change Theme"] {
+  --background: var(--ion-color-dark);
+  --color: var(--ion-color-light);
 }
 
 .sign-in-button {
@@ -187,16 +191,30 @@ ion-button {
 
 /* Botón de registro en verde */
 .register-button {
-  --background: green;
+  --background: #b89a59;
 }
 
 /* Botón de modo oscuro en blanco, modo claro en negro */
 ion-button[aria-label="Change Theme"] {
-  --background: black;
+  --background: #b89a59;
 }
 
 .ion-palette-dark ion-button[aria-label="Change Theme"] {
-  --background: rgb(0, 0, 0);
-  --color: black;
+  --background: #b89a59;
+  --color: rgb(255, 255, 255);
+}
+
+.centered-box, .dark-text, .light-text {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-button {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-dark);
+}
+
+.ion-palette-dark .theme-toggle-button {
+  --background: var(--ion-color-dark);
+  --color: var(--ion-color-light);
 }
 </style>
