@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 
 :root {
   --main-galileo-color: rgb(184, 154, 89);
@@ -10,12 +12,13 @@ body,
 html {
   height: 100%;
   color: black;
+  font-family: 'Poppins', Helvetica, sans-serif; 
 }
 
 body ion-content, body .ion-page, body #background-content {
   margin: 0;
   background-color: rgb(102, 102, 102);
-  font-family: 'Montserrat-Medium', sans-serif;
+  font-family: 'Poppins', Helvetica, sans-serif;
 }
 
 .topbar {
@@ -235,4 +238,9 @@ input[type='submit'] {
 .w-grow {
   width: 1px;
   flex-grow: 1;
+}
+
+.form-actions ion-button {
+  --background: var(--main-galileo-color);
+  --background-hover: var(--main-galileo-color-focus);
 }
