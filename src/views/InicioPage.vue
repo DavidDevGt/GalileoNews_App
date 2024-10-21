@@ -34,13 +34,8 @@
                 <ion-button fill="clear">
                   <ion-icon class="topbar__icon" :icon="bookmarkOutline"></ion-icon>
                 </ion-button>
+           
                 <div class="w-grow"></div>
-                <ion-button fill="clear" color="danger">
-                  <ion-icon class="topbar__icon" :icon="trashBin"></ion-icon>
-                </ion-button>
-                <ion-button fill="clear">
-                  <ion-icon class="topbar__icon" :icon="brush"></ion-icon>
-                </ion-button>
               </div>
             </div>
             <div class="notice-image" >

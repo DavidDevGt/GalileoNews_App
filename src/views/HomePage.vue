@@ -145,7 +145,7 @@ ion-content::part(background) {
 }
 
 .error-message {
-  color: red;
+  color: #ff8800;
   font-size: 0.7em;
 }
 
