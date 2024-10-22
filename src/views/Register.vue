@@ -1,6 +1,6 @@
 <template>
   <ion-page :class="{ 'ion-palette-dark': isDark }">
-    <ion-content>
+    <gn-ion-content>
       <div class="gn-topbar">
         <div class="gn-topbar__title">
           <div>
@@ -45,16 +45,16 @@
 
           <div class="sign-in-button">
             <div class="or">O</div>
-            <div class="google_signin" @click="onGoogleSignIn">
-              <div class="google__icon">
+            <div class="google_signin">
+              <div class="google__icon" >
                 <ion-icon :icon="logoGoogle"></ion-icon>
               </div>
-              <span>Registrar con Google</span>
+              <span @click="onGoogleSignIn">Registrar con Google</span>
             </div>
           </div>
         </div>
       </div>
-    </ion-content>
+    </gn-ion-content>
   </ion-page>
 </template>
 
@@ -117,7 +117,7 @@ const toggleChange = () => {
 
 <style scoped>
 /* Fondo claro y oscuro */
-ion-content::part(background) {
+gn-ion-content::part(background) {
     background: transparent;
 }
 </style>

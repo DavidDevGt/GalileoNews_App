@@ -1,6 +1,6 @@
 <template>
     <ion-page :class="{ 'ion-palette-dark': isDark }">
-        <ion-content>
+        <gn-ion-content>
             <div class="topbar">
                 <div class="topbar__title">
                     <div>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </div>
-        </ion-content>
+        </gn-ion-content>
     </ion-page>
 </template>
 
@@ -194,7 +194,7 @@ const toggleChange = () => {
 </script>
 
 <style scoped>
-ion-content::part(background) {
+gn-ion-content::part(background) {
     background: transparent;
 }
 

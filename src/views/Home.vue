@@ -1,6 +1,6 @@
 <template>
   <ion-page :class="{ 'ion-palette-dark': isDark }">
-    <ion-content>
+    <gn-ion-content>
       <ion-toolbar :color="isDark ? 'medium' : 'light'" >
         <ion-buttons slot="start">
           <ion-button @click="logout">
@@ -100,7 +100,7 @@
           </ion-card>
         </div>
       </div>
-    </ion-content>
+    </gn-ion-content>
     <ion-footer>
       <div class=" footer-buttons ">
         <ion-button expand="block" fill="clear" size="large" :class="tabActive === 'noticias' ? 'tab-active' : ''" @click="() => { toggleTabActive('noticias') }" >
@@ -192,7 +192,7 @@ const toggleTabActive = (tabName) => {
 </script>
 
 <style scoped>
-ion-content::part(background) {
+gn-ion-content::part(background) {
   background: transparent;
 }
 

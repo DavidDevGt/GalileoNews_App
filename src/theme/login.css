@@ -15,7 +15,7 @@ html {
   font-family: 'Poppins', Helvetica, sans-serif; 
 }
 
-body ion-content, body .ion-page, body #background-content {
+body gn-ion-content, body .ion-page, body #background-content {
   margin: 0;
   background-color: rgb(102, 102, 102);
   font-family: 'Poppins', Helvetica, sans-serif;

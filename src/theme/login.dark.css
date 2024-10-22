@@ -14,7 +14,7 @@
   color: var(--label-color);
 }
 
-.ion-palette-dark ion-content, .ion-palette-dark .ion-page, .ion-palette-dark #background-content {
+.ion-palette-dark gn-ion-content, .ion-palette-dark .ion-page, .ion-palette-dark #background-content {
   background-color: #262424;
 }
 

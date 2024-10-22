@@ -1,6 +1,6 @@
 <template>
     <ion-page :class="{ 'ion-palette-dark': isDark }">
-      <ion-content>
+      <gn-ion-content>
         <ion-toolbar :color="isDark ? 'medium' : 'light'">
           <ion-buttons slot="start">
             <ion-button>
@@ -38,7 +38,7 @@
             </div>
           </div>
         </form>
-      </ion-content>
+      </gn-ion-content>
     </ion-page>
   </template>
   
@@ -92,9 +92,6 @@
     }
   };
   
-  
-  
-  
   // Use matchMedia to check the user preference
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
   
@@ -119,7 +116,7 @@
   </script>
   
   <style scoped>
-  ion-content::part(background) {
+  gn-ion-content::part(background) {
     background: transparent;
   }
   
@@ -129,7 +126,7 @@
     font-size: 24px;
   }
   
-  .ion-palette-dark ion-content::part(background) {
+  .ion-palette-dark gn-ion-content::part(background) {
     background-color: #1e1e1e;
   }
   
