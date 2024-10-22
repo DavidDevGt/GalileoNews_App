@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
-import InicioPage from '../views/InicioPage.vue';
+import Login from '../views/Login.vue';
+import Home from '../views/Home.vue';
 import RegisterPage from '../views/RegisterPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
@@ -10,14 +10,14 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/home'
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: HomePage
+    path: '/login',
+    name: 'Login',
+    component: Login
   },
   {
-    path: '/inicio',
-    name: 'Inicio',
-    component: InicioPage
+    path: '/home',
+    name: 'Home',
+    component: Home
   },
   {
     path: '/register', // Nueva ruta para la página de registro
