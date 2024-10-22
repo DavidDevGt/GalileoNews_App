@@ -1,0 +1,39 @@
+:root {
+    --label-color: rgb(255, 255, 255);
+  }
+
+#title {
+    color: var(--label-color);
+  }
+  
+  .ion-palette-dark .gn-register__background {
+    background-color: rgb(103, 103, 112);
+  }
+  
+  .ion-palette-dark .gn-register__title span {
+    color: rgb(255, 255, 255);
+  }
+  
+  .ion-palette-dark .form-widget input[type="text"],
+  .ion-palette-dark .form-widget input[type="password"] {
+    border: 1px solid rgb(102, 99, 99);
+    color: rgb(255, 255, 255);
+  }
+  
+  .ion-palette-dark .form-widget input[type="text"]:focus,
+  .ion-palette-dark .form-widget input[type="password"]:focus {
+    background: rgb(0, 0, 0);
+  }
+  
+  .ion-palette-dark .or {
+    color: var(--label-color);
+  }
+  
+  .ion-palette-dark .google_signin {
+    background: #3b82df;
+  }
+  
+  .ion-palette-dark .google_signin:hover {
+    background: #1a73e8;
+  }
+  

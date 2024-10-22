@@ -125,6 +125,9 @@ import { happyOutline, sunnyOutline, moon, logoGoogle } from "ionicons/icons";
 import { ref, reactive, onMounted, onUnmounted } from "vue";
 import authService from "@/services/authService";
 import storage from "@/services/storageService";
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const isDark = ref(false);
 const formModel = reactive({
@@ -152,7 +155,7 @@ const onSubmitForm = async () => {
             const response = await authService.login(formModel.email, formModel.password);
             console.log(response);
             await storage.set('token', response.token);
-            console.log('Fin');
+            router.push('/home');
         } catch (error) {
             console.error('Error al iniciar sesión:', error);
         }

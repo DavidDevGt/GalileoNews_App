@@ -1,26 +1,28 @@
 <template>
   <ion-page :class="{ 'ion-palette-dark': isDark }">
     <ion-content>
-      <div class="topbar">
-        <div class="topbar__title">
+      <div class="gn-topbar">
+        <div class="gn-topbar__title">
           <div>
-            <ion-icon :icon="happyOutline" class="topbar__icon"></ion-icon>
+            <ion-icon :icon="happyOutline" class="gn-topbar__icon"></ion-icon>
           </div>
-          <span :class="{'dark-text': isDark, 'light-text': !isDark}">GalileoNews - Registro</span>
+          <span id="title">GalileoNews</span>
           <div class="w-grow"></div>
           <ion-buttons>
-            <ion-button :color="isDark ? 'light' : 'dark'" class="theme-toggle-button" @click="toggleChange">
-              <ion-icon :icon="isDark ? sunnyOutline : moon" class="topbar__icon"></ion-icon>
+            <ion-button :color="isDark ? 'light' : 'dark'" @click="toggleChange">
+              <ion-icon :icon="isDark ? sunnyOutline : moon" class="gn-topbar__icon"></ion-icon>
             </ion-button>
           </ion-buttons>
         </div>
-      </div>  
-      <h1 style="text-align: center; color: darkgray;" >Galileo News</h1>
-      <div class="register__background">
-        <div id="register-form" class="centered-box" :class="{ 'dark-box': isDark }">
-          <form id="register" name="register" class="margin-form" @submit.prevent="onSubmitForm">
+      </div>
+
+      <div class="gn-register__background">
+        <div id="register-login" class="gn-register__form-container">
+          <div class="gn-register__title">
+            <span>Galileo News</span>
+          </div>
+          <form id="register" name="register" @submit.prevent="onSubmitForm">
             <div class="container-form">
-              <!-- Campos de registro -->
               <div class="form-widget" v-for="(field, index) in formFields" :key="index">
                 <ion-input
                   v-model="formModel[field.model]"
@@ -30,19 +32,19 @@
                   :name="field.model"
                   :label="field.label"
                   :placeholder="field.placeholder"
-                  :class="{ 'dark-text': isDark }"
                 />
                 <span v-if="errors[field.model]" class="error-message">{{ errors[field.model] }}</span>
               </div>
               <div class="form-element">
                 <div class="form-actions">
-                  <ion-button type="submit" expand="block" class="register-button">Registrarse</ion-button>
+                  <ion-button type="submit" expand="block">Registrarse</ion-button>
                 </div>
               </div>
             </div>
           </form>
+
           <div class="sign-in-button">
-            <div class="or"></div>
+            <div class="or">O</div>
             <div class="google_signin" @click="onGoogleSignIn">
               <div class="google__icon">
                 <ion-icon :icon="logoGoogle"></ion-icon>
@@ -116,105 +118,6 @@ const toggleChange = () => {
 <style scoped>
 /* Fondo claro y oscuro */
 ion-content::part(background) {
-  background-color: var(--ion-background-color, rgb(255, 255, 255));
-}
-
-.ion-palette-dark ion-content::part(background) {
-  background-color: #1e1e1e;
-}
-
-/* Estilos para el cuadro en modo oscuro */
-.dark-box {
-  background-color: #121212;
-  color: #f5f5f5;
-}
-
-/* Estilos para el texto */
-.dark-text {
-  color: white;
-}
-
-.light-text {
-  color: black;
-}
-
-.error-message {
-  color: #ff8800;
-  font-size: 0.7em;
-}
-
-/* Estilos de cuadro centrado */
-.centered-box {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Botón de modo oscuro/luz */
-.topbar__icon {
-  font-size: 1.5em;
-}
-
-ion-button[aria-label="Change Theme"] {
-  --background: var(--ion-color-light);
-  --color: var(--ion-color-dark);
-}
-
-.ion-palette-dark ion-button[aria-label="Change Theme"] {
-  --background: var(--ion-color-dark);
-  --color: var(--ion-color-light);
-}
-
-.sign-in-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.google_signin {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.google__icon {
-  margin-right: 10px;
-}
-
-.or {
-  text-align: center;
-  margin: 20px 0;
-}
-
-/* Botón de registro en verde */
-.register-button {
-  --background: #b89a59;
-}
-
-/* Botón de modo oscuro en blanco, modo claro en negro */
-ion-button[aria-label="Change Theme"] {
-  --background: #b89a59;
-}
-
-.ion-palette-dark ion-button[aria-label="Change Theme"] {
-  --background: #b89a59;
-  --color: rgb(255, 255, 255);
-}
-
-.centered-box, .dark-text, .light-text {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.theme-toggle-button {
-  --background: var(--ion-color-light);
-  --color: var(--ion-color-dark);
-}
-
-.ion-palette-dark .theme-toggle-button {
-  --background: var(--ion-color-dark);
-  --color: var(--ion-color-light);
+    background: transparent;
 }
 </style>

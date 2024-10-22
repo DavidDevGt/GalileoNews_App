@@ -3,7 +3,7 @@
     <ion-content>
       <ion-toolbar :color="isDark ? 'medium' : 'light'" >
         <ion-buttons slot="start">
-          <ion-button>
+          <ion-button @click="logout">
             <ion-icon class="topbar__icon" :icon="logOut"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -118,7 +118,9 @@
 import { IonPage, IonIcon, IonButton, IonButtons, IonCard, IonImg } from '@ionic/vue';
 import { sunnyOutline, moon, logOut, personCircle, book, bookmarkOutline, trashBin, newspaper, idCard, brush } from 'ionicons/icons';
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const isDark = ref(false);
 const tabActive = ref('noticias');
 
@@ -159,6 +161,10 @@ const contactosImportantes = ref([
   { nombre: 'Jamie Smith', puesto: 'UX Research Lead, UserFirst Insights', correo_electronico: 'jamiesmith@example.com', telefono: '(502) 5635-1946' },
   { nombre: 'Chris Brown', puesto: 'Head of Product Management, TechPioneers', correo_electronico: 'chrisbrown@example.com', telefono: '(503) 3894-7493' }
 ])
+
+const logout = () => {
+  router.push('login');
+};
 
 // Use matchMedia to check the user preference
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
