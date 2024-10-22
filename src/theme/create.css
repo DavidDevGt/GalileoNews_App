@@ -1,0 +1,63 @@
+ion-content::part(background) {
+    background: transparent;
+  }
+  
+  .ion-palette-dark ion-content::part(background) {
+    background-color: #1e1e1e;
+  }
+  
+  /* Topbar styles */
+  .topbar__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .topbar__icon {
+    height: 24px;
+    width: 24px;
+    color: inherit;
+  }
+  
+  /* Formulario */
+  .create-news-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Grupo de formulario */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group ion-input {
+    width: 100%;
+    padding: 0.5em;
+    background: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  .form-group ion-input:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mensaje de error */
+  .error-message {
+    color: #ff8800;
+    font-size: 0.7em;
+  }
+  
+  /* Botones */
+  .publish-button {
+    --background: rgb(184, 154, 89);
+    --background-hover: rgb(202, 166, 89);
+    width: 100%;
+    padding: 0.7em;
+    border-radius: 5px;
+  }
+  

@@ -67,12 +67,12 @@
                                     >{{ errors.password }}</span
                                 >
                             </div>
-                            <div class="form-widget">
+                            <div class="form-widget remember-divisor">
                                 <ion-checkbox
                                     v-model="formModel.rememberMe"
                                     id="rememberMe"
                                 ></ion-checkbox>
-                                <label for="rememberMe">
+                                <label class="remember-me-txt" for="rememberMe">
                                     Recordar mi contraseña en esta computadora
                                 </label>
                             </div>
@@ -97,11 +97,11 @@
                     <br />
                     <div class="cont-standard">
                         <span class="Faqs2">
-                            <a href="#" class="button">Soporte </a>
+                            <a href="#" class="button">Soporte</a>
                         </span>
                         <span class="Faqs2">
-                            <a href="#" class="button"
-                                >Olvido su contraseña?
+                            <a href="/login" @click.prevent="returnToRegister"
+                                >No tienes una cuenta?
                             </a>
                         </span>
                     </div>
@@ -173,6 +173,10 @@ const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 const initializeDarkPalette = (_isDark) => {
     isDark.value = _isDark;
+};
+
+const returnToRegister = () => {
+  router.push("/register");
 };
 
 onMounted(() => {

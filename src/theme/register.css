@@ -7,6 +7,10 @@
   --link-galileo-color-focus: rgb(153, 83, 14);
 }
 
+gn-ion-content {
+    height: 100vh
+}
+
 .gn-topbar {
   display: flex;
   height: auto;
