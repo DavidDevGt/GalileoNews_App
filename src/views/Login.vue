@@ -150,6 +150,10 @@ const validateForm = () => {
 };
 
 const onSubmitForm = async () => {
+    /** EXAMPLE !!!!!!!!* */
+    await storage.set('token', 'AB1S74E7541WD5533SFPCKNWI');
+    await storage.set('isAdmin', 'S');
+    /*** */
     if (validateForm()) {
         try {
             const response = await authService.login(formModel.email, formModel.password);
@@ -179,7 +183,9 @@ const returnToRegister = () => {
   router.push("/register");
 };
 
-onMounted(() => {
+onMounted(async () => {
+    await storage.remove('token');
+    await storage.remove('isAdmin');
     initializeDarkPalette(prefersDark.matches);
     prefersDark.addEventListener("change", (mediaQuery) =>
         initializeDarkPalette(mediaQuery.matches),
