@@ -83,15 +83,19 @@
 <script setup>
 import { IonPage, IonIcon, IonButton, IonButtons, IonInput } from "@ionic/vue";
 import { happyOutline, sunnyOutline, moon, logoGoogle } from "ionicons/icons";
-import { ref, reactive } from "vue";
+import { ref, reactive, computed } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
+import authService from "@/services/authService";
+import { alertController } from "@ionic/vue";
 
 const router = useRouter();
+const store = useStore();
 
-const isDark = ref(false);
+const isDark = computed(() => store.getters["darkLight/isDark"]);
 
 const formModel = reactive({
-  firstName: "",
+  username: "",
   lastName: "",
   email: "",
   password: "",
@@ -99,7 +103,7 @@ const formModel = reactive({
 });
 
 const errors = reactive({
-  firstName: "",
+  username: "",
   lastName: "",
   email: "",
   password: "",
@@ -108,16 +112,10 @@ const errors = reactive({
 
 const formFields = [
   {
-    model: "firstName",
-    label: "Nombre",
+    model: "username",
+    label: "Nombre de Usuario",
     type: "text",
-    placeholder: "Ingresa tu nombre",
-  },
-  {
-    model: "lastName",
-    label: "Apellido",
-    type: "text",
-    placeholder: "Ingresa tu apellido",
+    placeholder: "Ingresa tu nombre de usuario",
   },
   {
     model: "email",
@@ -140,8 +138,7 @@ const formFields = [
 ];
 
 const validateForm = () => {
-  errors.firstName = formModel.firstName ? "" : "El nombre es obligatorio.";
-  errors.lastName = formModel.lastName ? "" : "El apellido es obligatorio.";
+  errors.username = formModel.username ? "" : "El nombre es obligatorio.";
   errors.email = formModel.email ? "" : "El correo electrónico es obligatorio.";
   errors.password = formModel.password ? "" : "La contraseña es obligatoria.";
   errors.confirmPassword =
@@ -149,17 +146,36 @@ const validateForm = () => {
       ? ""
       : "Las contraseñas no coinciden.";
   return (
-    !errors.firstName &&
-    !errors.lastName &&
+    !errors.username &&
     !errors.email &&
     !errors.password &&
     !errors.confirmPassword
   );
 };
 
-const onSubmitForm = () => {
+const showSuccessAlert = async () => {
+  const alert = await alertController.create({
+    header: "Registro Exitoso",
+    message: "Tu cuenta ha sido creada exitosamente.",
+    buttons: ["OK"],
+  });
+  await alert.present();
+};
+
+const onSubmitForm = async () => {
   if (validateForm()) {
-    console.log("formModel", JSON.stringify(formModel));
+    try {
+      const response = await authService.register(
+        formModel.username,
+        formModel.email,
+        formModel.password
+      );
+      await showSuccessAlert();
+
+      router.push("/login");
+    } catch (error) {
+      console.error("Error al registrar:", error);
+    }
   } else {
     console.log("Validation failed");
   }
@@ -174,7 +190,7 @@ const returnToLogin = () => {
 };
 
 const toggleChange = () => {
-  isDark.value = !isDark.value;
+  store.dispatch('darkLight/toggleDarkMode');
 };
 </script>
 

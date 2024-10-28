@@ -117,11 +117,14 @@
 <script setup>
 import { IonPage, IonIcon, IonButton, IonButtons, IonCard, IonImg } from '@ionic/vue';
 import { sunnyOutline, moon, logOut, personCircle, book, bookmarkOutline, trashBin, newspaper, idCard, brush } from 'ionicons/icons';
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 const router = useRouter();
-const isDark = ref(false);
+const store = useStore();
+
+const isDark = computed(() => store.getters['darkLight/isDark']);
 const tabActive = ref('noticias');
 
 const noticiasEventos = ref([
@@ -166,24 +169,8 @@ const logout = () => {
   router.push('login');
 };
 
-// Use matchMedia to check the user preference
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-const initializeDarkPalette = (_isDark) => {
-  isDark.value = _isDark;
-};
-
-onMounted(() => {
-  initializeDarkPalette(prefersDark.matches);
-  prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
-});
-
-onUnmounted(() => {
-  prefersDark.removeEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
-});
-
 const toggleChange = () => {
-  isDark.value = !isDark.value;
+  store.dispatch('darkLight/toggleDarkMode');
 };
 
 const toggleTabActive = (tabName) => {

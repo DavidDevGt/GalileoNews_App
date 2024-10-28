@@ -122,14 +122,17 @@ import {
     IonCheckbox,
 } from "@ionic/vue";
 import { happyOutline, sunnyOutline, moon, logoGoogle } from "ionicons/icons";
-import { ref, reactive, onMounted, onUnmounted } from "vue";
+import { ref, reactive, computed } from "vue";
 import authService from "@/services/authService";
 import storage from "@/services/storageService";
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 const router = useRouter();
+const store = useStore();
 
-const isDark = ref(false);
+const isDark = computed(() => store.getters['darkLight/isDark']);
+
 const formModel = reactive({
     email: "",
     password: "",
@@ -168,32 +171,8 @@ const onGoogleSignIn = () => {
     console.log("Google Sign-In clicked");
 };
 
-// Use matchMedia to check the user preference
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-const initializeDarkPalette = (_isDark) => {
-    isDark.value = _isDark;
-};
-
-const returnToRegister = () => {
-  router.push("/register");
-};
-
-onMounted(() => {
-    initializeDarkPalette(prefersDark.matches);
-    prefersDark.addEventListener("change", (mediaQuery) =>
-        initializeDarkPalette(mediaQuery.matches),
-    );
-});
-
-onUnmounted(() => {
-    prefersDark.removeEventListener("change", (mediaQuery) =>
-        initializeDarkPalette(mediaQuery.matches),
-    );
-});
-
 const toggleChange = () => {
-    isDark.value = !isDark.value;
+  store.dispatch('darkLight/toggleDarkMode');
 };
 </script>
 
