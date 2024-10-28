@@ -182,7 +182,8 @@ const onSubmitForm = async () => {
 };
 
 const onGoogleSignIn = () => {
-  console.log("Google Sign-In clicked");
+  //window.location.href = `${process.env.VUE_APP_API_URL}/auth/google`;
+  console.log('Google Sign In');
 };
 
 const returnToLogin = () => {
