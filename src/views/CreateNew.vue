@@ -30,7 +30,7 @@
 
         <!-- Botón de publicar -->
         <div class="form-actions">
-          <ion-button type="submit" expand="block" class="publish-button" disabled="true">Publicar</ion-button>
+          <ion-button type="submit" expand="block" class="publish-button" >Publicar</ion-button>
         </div>
       </form>
     </ion-content>
@@ -68,19 +68,21 @@ const store = useStore();
 const isDark = computed(() => store.getters["darkLight/isDark"]);
 
 const formModel = reactive({
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  nameNews: "",
+  description: "",
+  career: "",
+  type: "",
+  date: "",
+  image: ""
 });
 
 const errors = reactive({
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  nameNews: "",
+  description: "",
+  career: "",
+  type: "",
+  date: "",
+  fileImage:""
 });
 
 const formFields = [
@@ -114,24 +116,31 @@ const formFields = [
     type: "date",
     placeholder: "Ingrese una fecha",
   },
+  {
+    model: "fileImage",
+    label: "Seleccione una imagen",
+    type: "file",
+    placeholder: "Ingrese una imagen",
+  }
 ];
 
 const validateForm = () => {
   errors.nameNews = formModel.nameNews ? "" : "El Titular es obligatorio.";
-  errors.descriptrionNews = formModel.lastName
-    ? ""
-    : "La descripcion es obligatoria";
+  errors.descriptrionNews = formModel.lastName ? "" : "La descripcion es obligatoria";
   errors.career = formModel.career ? "" : "La campo carrera es obligatorio";
   errors.type = formModel.type ? "" : "El tipo de noticia es obligatorio";
   errors.date = formModel.date ? "" : "El campo fecha es obligatorio";
+  errors.fileImage = formModel.fileImage ? "" : "La imagen es obligatoria"
   return (
-    !errors.firstName &&
-    !errors.lastName &&
-    !errors.email &&
-    !errors.password &&
-    !errors.confirmPassword
+    !errors.nameNews &&
+    !errors.description &&
+    !errors.career &&
+    !errors.type &&
+    !errors.date &&
+    !errors.fileImage
   );
 };
+
 
 const onSubmitForm = () => {
   if (validateForm()) {
