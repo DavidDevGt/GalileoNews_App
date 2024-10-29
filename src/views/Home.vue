@@ -130,33 +130,41 @@ const tabActive = ref('noticias');
 const noticiasEventos = ref([
   {
     usuario: 'TDS',
-    categoria: 'Invitación',
-    fecha: 'Sep 3, 2024',
-    titulo: 'How we Run Out of Fresh Music ?',
-    descripcion: 'Lorizzle i\'m in the shizzle dolizzle sit fizzle, consectetuer adipiscing elit. Nullizzle shizzlin dizzle velizzle, yo volutpizzle, things quizzle, dope vizzle, arcu. Pellentesque owned the bizzle',
-    image_url: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrPn4eie6WFjf1rLs6gNnjakLIOZx6ccqAoTYoolPuqqxQMF8O'
+    categoria: 'Webinar',
+    fecha: 'Nov 16, 2024',
+    titulo: 'Webinar Open Day Energía y Medio Ambiente: Carreras que Impulsan la Transición Hacia un Futuro Sostenible',
+    descripcion: 'Únete a nosotros en un webinar único donde exploraremos la crisis climática actual y las oportunidades que ofrece el sector de la energía y el medio ambiente. Este evento está dirigido a jóvenes desde 17 años y profesionales interesados en especializarse en carreras que son cruciales para un futuro sostenible.',
+    image_url: 'https://www.galileo.edu/wp-content/uploads/2024/09/Portada-evento.png'
   },
   {
     usuario: 'GALILEO',
     categoria: 'Novedades',
-    fecha: 'Sep 1, 2024',
-    titulo: 'How we Run Out of Fresh Music ?',
-    descripcion: 'Lorizzle i\'m in the shizzle dolizzle sit fizzle, consectetuer adipiscing elit. Nullizzle shizzlin dizzle velizzle, yo volutpizzle, things quizzle, dope vizzle, arcu. Pellentesque owned the bizzle',
-    image_url: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTEzoR6P8aIBqfnzi77baejynOQklaZHYS360f2PemtXJdHO5lZ'
+    fecha: 'Nov 5, 2024',
+    titulo: 'Potencia tu Estrategia Empresarial con Business Intelligence',
+    descripcion: '¡Prepárate para transformar tu estrategia empresarial! 🚀 El curso «Potencia tu Estrategia Empresarial con Business Intelligence» es una oportunidad única para aprender a dominar las herramientas de análisis de datos que están revolucionando la toma de decisiones en empresas de toda Latinoamérica.',
+    image_url: 'https://www.galileo.edu/wp-content/uploads/2024/09/Carrusel-edX-2-artes-554-x-674-px.png'
   },
   {
     usuario: 'TDS',
-    categoria: 'Informativa',
-    fecha: 'Ago 31, 2024',
-    titulo: 'How we Run Out of Fresh Music ?',
-    descripcion: 'Lorizzle i\'m in the shizzle dolizzle sit fizzle, consectetuer adipiscing elit. Nullizzle shizzlin dizzle velizzle, yo volutpizzle, things quizzle, dope vizzle, arcu. Pellentesque owned the bizzle',
-    image_url: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRrJTG8Sj7ZNysABLLXH0m_mB_lZRzF-V4Me01ISGVSlzpY6Zyo'
+    categoria: 'Invitacion',
+    fecha: 'OCT 31, 2024',
+    titulo: 'TeleCom BootCamp 2024',
+    descripcion: 'Queremos invitarte al TeleCom Bootcamp de Ingeniería en Telecomunicaciones y Redes, este es un evento diseñado para ayudarte a explorar y desarrollar tus habilidades en un campo en constante evolución',
+    image_url: 'https://www.galileo.edu/wp-content/uploads/2024/10/2_1.png'
+  },
+  {
+    usuario: 'TDS',
+    categoria: 'Invitacion',
+    fecha: 'OCT 28, 2024',
+    titulo: 'Diplomado Scrum',
+    descripcion: 'Queremos invitarte al TeleCom Bootcamp de Ingeniería en Telecomunicaciones y Redes, este es un evento diseñado para ayudarte a explorar y desarrollar tus habilidades en un campo en constante evolución',
+    image_url: 'https://www.galileo.edu/wp-content/uploads/2024/10/2_1.png'
   }
 ]);
 
 const enlacesImportantes = ref([
-  { titulo: 'Pensum', direccion_url: 'https://www.galileo.edu/ies/pensums/?gphcarrera=MSP' },
-  { titulo: 'Horario', direccion_url: 'https://www.galileo.edu/ies/horarios/?gphcarrera=MSP' }
+  { titulo: 'Pensum', direccion_url: 'https://www.galileo.edu/ivn/carrera/tecnico-desarrollo-software-tds/' },
+  { titulo: 'Pagar mi U', direccion_url: 'https://www.galileo.edu/pagos/no-registrados/' }
 ])
 
 const contactosImportantes = ref([

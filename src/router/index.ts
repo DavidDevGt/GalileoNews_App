@@ -8,7 +8,7 @@ import CreateNew from '../views/CreateNew.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/login'
   },
   {
     path: '/login',

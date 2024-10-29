@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001";
+const API_URL = "http://localhost:3001";  // Definido directamente para pruebas
 
 export default {
   async login(email: string, password: string) {
