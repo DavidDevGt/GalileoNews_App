@@ -1,0 +1,38 @@
+
+.ion-palette-dark .notice-card {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.ion-palette-dark .footer-buttons {
+  color: white;
+}
+
+.ion-palette-dark .footer-buttons .tab-active {
+  color: var(--main-galileo-color-focus);
+  border: solid 3px var(--main-galileo-color-focus);
+  border-width: 0 0 3px 0;
+}
+
+.ion-palette-dark .footer-buttons {
+  background-color: rgb(56, 56, 64);
+}
+
+.ion-palette-dark .footer-buttons ion-button {
+  --color: rgb(255, 255, 255);
+}
+
+.ion-palette-dark .enlaces-card {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.ion-palette-dark .contactos-card {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.ion-palette-dark ion-item.item {
+  --ion-item-color: white;
+}
+

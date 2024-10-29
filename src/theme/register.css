@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --main-galileo-color: rgb(184, 154, 89);
+  --main-galileo-color-focus: rgb(202, 166, 89);
+  --link-galileo-color: rgb(180, 95, 8);
+  --link-galileo-color-focus: rgb(153, 83, 14);
+}
+
+gn-ion-content {
+    height: 100vh
+}
+
+.gn-topbar {
+  display: flex;
+  height: auto;
+  padding: 3rem;
+}
+
+.gn-topbar__title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 1rem;
+  border: solid 2px #FFF;
+  border-width: 0 0 2px 0;
+}
+
+.gn-topbar__icon {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1.5rem;
+  color: white;
+}
+
+.gn-register__background {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #FFF;
+  border-radius: 25px;
+  padding: 60px 50px 40px;
+}
+
+.gn-register__title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.gn-register__title span {
+  color: rgb(102, 102, 102);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 550px) {
+  .gn-register__background {
+    width: auto;
+    margin: 0 5%;
+    padding: 60px 15px 40px;
+  }
+}
+
+.gn-register__form-container {
+  width: 100%;
+  margin: auto;
+}
+
+/* Widgets de formulario */
+.form-widget input[type="text"],
+.form-widget input[type="password"] {
+  width: 100% !important;
+  background: none;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  padding: 0.2em;
+}
+
+.form-widget input[type="text"]:focus,
+.form-widget input[type="password"]:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.form-widget label {
+  font-size: 0.9em;
+}
+
+.form-actions ion-button {
+  --background: var(--main-galileo-color);
+  --background-hover: var(--main-galileo-color-focus);
+}
+
+/* Botones y diseño adicional */
+.sign-in-button {
+  margin: 30px 0 12px;
+}
+
+.or {
+  padding-bottom: 1.5rem;
+  text-align: center;
+  color: #151515;
+  font-weight: 600;
+  font-size: 0.75rem;
+  position: relative;
+}
+
+.or:before,
+.or:after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  width: calc(43% - 20px);
+  height: 1px;
+  background-color: #505050;
+  box-sizing: border-box;
+}
+
+.or:before {
+  left: 20px;
+}
+
+.or:after {
+  right: 20px;
+}
+
+.google_signin {
+  display: flex;
+  width: 100%;
+  font-size: 1.1em;
+  align-items: center;
+  justify-content: center;
+  background: #1a73e8 none repeat scroll 0% 0%;
+  border: none;
+  padding: 0.25rem;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.google_signin:hover {
+  background: #3b82df none repeat scroll 0% 0%;
+}
+
+.google_signin .google__icon {
+  height: 2rem;
+  padding-bottom: 0.15rem;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  pointer-events: none;
+}
+
+.google_signin span {
+  pointer-events: none;
+}

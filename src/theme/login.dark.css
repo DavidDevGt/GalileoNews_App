@@ -1,5 +1,20 @@
+:root {
+  --label-color: rgb(255, 255, 255); /* Color de etiqueta claro */
+}
 
-.ion-palette-dark ion-content, .ion-palette-dark .ion-page, .ion-palette-dark #background-content {
+.ion-palette-dark .label-text-wrapper {
+  color: var(--label-color);
+}
+
+.ion-palette-dark .or {
+  color: var(--label-color);
+}
+
+.ion-palette-dark label {
+  color: var(--label-color);
+}
+
+.ion-palette-dark gn-ion-content, .ion-palette-dark .ion-page, .ion-palette-dark #background-content {
   background-color: #262424;
 }
 

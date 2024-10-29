@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 
 :root {
   --main-galileo-color: rgb(184, 154, 89);
@@ -10,12 +12,13 @@ body,
 html {
   height: 100%;
   color: black;
+  font-family: 'Poppins', Helvetica, sans-serif; 
 }
 
-body ion-content, body .ion-page, body #background-content {
+body gn-ion-content, body .ion-page, body #background-content {
   margin: 0;
   background-color: rgb(102, 102, 102);
-  font-family: 'Montserrat-Medium', sans-serif;
+  font-family: 'Poppins', Helvetica, sans-serif;
 }
 
 .topbar {
@@ -72,8 +75,36 @@ body ion-content, body .ion-page, body #background-content {
     width: auto;
     margin: 0 5%;
     padding: 60px 15px 40px;
+
+    .remember-divisor {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  
+    .remember-me-txt {
+      margin-top: 1px;
+      font-size: 0.78rem!important;
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 950px) {
+  .remember-divisor {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .remember-me-txt {
+    margin-top: 1px;
+    font-size: 0.85rem!important;
   }
 }
+
 
 .login__background .container-form {
   width: 100%;
@@ -241,3 +272,4 @@ input[type='submit'] {
   --background: var(--main-galileo-color);
   --background-hover: var(--main-galileo-color-focus);
 }
+
