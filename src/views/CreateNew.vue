@@ -9,36 +9,20 @@
         </ion-buttons>
         <ion-buttons slot="end">
           <ion-button @click="toggleChange">
-            <ion-icon
-              :icon="isDark ? sunnyOutline : moon"
-              class="topbar__icon"
-            ></ion-icon>
+            <ion-icon :icon="isDark ? sunnyOutline : moon" class="topbar__icon"></ion-icon>
           </ion-button>
         </ion-buttons>
         <ion-title class="topbar__title">Galileo News</ion-title>
       </ion-toolbar>
 
       <!-- Formulario de creación de noticias -->
-      <form
-        id="create-news"
-        name="create-news"
-        class="create-news-form"
-        @submit.prevent="onSubmitForm"
-      >
-        <div
-          class="form-group"
-          v-for="(field, index) in formFields"
-          :key="index"
-        >
-          <ion-input
-            v-model="formModel[field.model]"
-            label-placement="stacked"
-            :id="field.model"
-            :type="field.type"
-            :name="field.model"
-            :label="field.label"
-            :placeholder="field.placeholder"
-          />
+      <form id="create-news" name="create-news" class="create-news-form" @submit.prevent="onSubmitForm">
+        <div class="form-group" v-for="(field, index) in formFields" :key="index">
+          <ion-input v-model="formModel[field.model]" label-placement="stacked" 
+          :id="field.model" 
+          :type="field.type"
+          :name="field.model" :label="field.label" 
+          :placeholder="field.placeholder" />
           <span v-if="errors[field.model]" class="error-message">{{
             errors[field.model]
           }}</span>
@@ -46,9 +30,7 @@
 
         <!-- Botón de publicar -->
         <div class="form-actions">
-          <ion-button type="submit" expand="block" class="publish-button"
-            >Publicar</ion-button
-          >
+          <ion-button type="submit" expand="block" class="publish-button" disabled="true">Publicar</ion-button>
         </div>
       </form>
     </ion-content>

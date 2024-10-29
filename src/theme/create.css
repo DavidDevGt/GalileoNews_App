@@ -21,12 +21,14 @@ ion-content::part(background) {
   
   /* Formulario */
   .create-news-form {
-    max-width: 600px;
+    max-width: 99%;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 95%;
+    align-content: center;
   }
   
   /* Grupo de formulario */
@@ -61,3 +63,7 @@ ion-content::part(background) {
     border-radius: 5px;
   }
   
+  label{
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-size: larger;
+  }
