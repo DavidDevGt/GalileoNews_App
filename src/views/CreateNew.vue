@@ -9,36 +9,20 @@
         </ion-buttons>
         <ion-buttons slot="end">
           <ion-button @click="toggleChange">
-            <ion-icon
-              :icon="isDark ? sunnyOutline : moon"
-              class="topbar__icon"
-            ></ion-icon>
+            <ion-icon :icon="isDark ? sunnyOutline : moon" class="topbar__icon"></ion-icon>
           </ion-button>
         </ion-buttons>
         <ion-title class="topbar__title">Galileo News</ion-title>
       </ion-toolbar>
 
       <!-- Formulario de creación de noticias -->
-      <form
-        id="create-news"
-        name="create-news"
-        class="create-news-form"
-        @submit.prevent="onSubmitForm"
-      >
-        <div
-          class="form-group"
-          v-for="(field, index) in formFields"
-          :key="index"
-        >
-          <ion-input
-            v-model="formModel[field.model]"
-            label-placement="stacked"
-            :id="field.model"
-            :type="field.type"
-            :name="field.model"
-            :label="field.label"
-            :placeholder="field.placeholder"
-          />
+      <form id="create-news" name="create-news" class="create-news-form" @submit.prevent="onSubmitForm">
+        <div class="form-group" v-for="(field, index) in formFields" :key="index">
+          <ion-input v-model="formModel[field.model]" label-placement="stacked" 
+          :id="field.model" 
+          :type="field.type"
+          :name="field.model" :label="field.label" 
+          :placeholder="field.placeholder" />
           <span v-if="errors[field.model]" class="error-message">{{
             errors[field.model]
           }}</span>
@@ -46,9 +30,7 @@
 
         <!-- Botón de publicar -->
         <div class="form-actions">
-          <ion-button type="submit" expand="block" class="publish-button"
-            >Publicar</ion-button
-          >
+          <ion-button type="submit" expand="block" class="publish-button" >Publicar</ion-button>
         </div>
       </form>
     </ion-content>
@@ -86,19 +68,21 @@ const store = useStore();
 const isDark = computed(() => store.getters["darkLight/isDark"]);
 
 const formModel = reactive({
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  nameNews: "",
+  description: "",
+  career: "",
+  type: "",
+  date: "",
+  image: ""
 });
 
 const errors = reactive({
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  nameNews: "",
+  description: "",
+  career: "",
+  type: "",
+  date: "",
+  fileImage:""
 });
 
 const formFields = [
@@ -132,24 +116,31 @@ const formFields = [
     type: "date",
     placeholder: "Ingrese una fecha",
   },
+  {
+    model: "fileImage",
+    label: "Seleccione una imagen",
+    type: "file",
+    placeholder: "Ingrese una imagen",
+  }
 ];
 
 const validateForm = () => {
   errors.nameNews = formModel.nameNews ? "" : "El Titular es obligatorio.";
-  errors.descriptrionNews = formModel.lastName
-    ? ""
-    : "La descripcion es obligatoria";
+  errors.descriptrionNews = formModel.lastName ? "" : "La descripcion es obligatoria";
   errors.career = formModel.career ? "" : "La campo carrera es obligatorio";
   errors.type = formModel.type ? "" : "El tipo de noticia es obligatorio";
   errors.date = formModel.date ? "" : "El campo fecha es obligatorio";
+  errors.fileImage = formModel.fileImage ? "" : "La imagen es obligatoria"
   return (
-    !errors.firstName &&
-    !errors.lastName &&
-    !errors.email &&
-    !errors.password &&
-    !errors.confirmPassword
+    !errors.nameNews &&
+    !errors.description &&
+    !errors.career &&
+    !errors.type &&
+    !errors.date &&
+    !errors.fileImage
   );
 };
+
 
 const onSubmitForm = () => {
   if (validateForm()) {
