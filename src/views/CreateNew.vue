@@ -2,7 +2,7 @@
   <ion-page :class="{ 'ion-palette-dark': isDark }">
     <ion-content>
       <ion-toolbar :color="isDark ? 'medium' : 'light'">
-        <ion-buttons slot="start">
+        <ion-buttons slot="start" @click="toggleExit">
           <ion-button>
             <ion-icon class="topbar__icon" :icon="logOut"></ion-icon>
           </ion-button>
@@ -153,6 +153,10 @@ const onSubmitForm = () => {
 const toggleChange = () => {
   store.dispatch("darkLight/toggleDarkMode");
 };
+
+const toggleExit = () => {
+  router.push('/login')
+}
 </script>
 
 <style scoped>
