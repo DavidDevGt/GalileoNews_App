@@ -127,6 +127,7 @@ import authService from "@/services/authService";
 import storage from "@/services/storageService";
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
+import { alertController } from "@ionic/vue";
 
 const router = useRouter();
 const store = useStore();
@@ -152,6 +153,15 @@ const validateForm = () => {
     return !errors.email && !errors.password;
 };
 
+const showErrorAlert = async (errorMessage) => {
+  const alert = await alertController.create({
+    header: "ERROR",
+    message: errorMessage,
+    buttons: ["OK"],
+  });
+  await alert.present();
+};
+
 const onSubmitForm = async () => {
     if (validateForm()) {
         try {
@@ -160,6 +170,7 @@ const onSubmitForm = async () => {
             await storage.set('token', response.token);
             router.push('/home');
         } catch (error) {
+            await showErrorAlert('Error al iniciar sesión: ' + String(error && error.message));
             console.error('Error al iniciar sesión:', error);
         }
     } else {
