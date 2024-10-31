@@ -4,6 +4,7 @@ import Login from '../views/Login.vue';
 import Home from '../views/Home.vue';
 import Register from '../views/Register.vue';
 import CreateNew from '../views/CreateNew.vue';
+import AuthSuccess from '../views/AuthSuccess.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -29,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/create',
     name: 'CreateNews',
     component: CreateNew
+  },
+  {
+    path: '/auth/success', 
+    name: 'AuthSuccess', 
+    component: AuthSuccess 
   }
 ];
 

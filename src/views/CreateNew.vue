@@ -2,8 +2,11 @@
   <ion-page :class="{ 'ion-palette-dark': isDark }">
     <ion-content>
       <ion-toolbar :color="isDark ? 'medium' : 'light'">
-        <ion-buttons slot="start" @click="toggleExit">
-          <ion-button>
+        <ion-buttons slot="start">
+          <ion-button @click="goHome">
+            <ion-icon class="topbar__icon" :icon="homeOutline"></ion-icon>
+          </ion-button>
+          <ion-button @click="toggleExit">
             <ion-icon class="topbar__icon" :icon="logOut"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -30,7 +33,7 @@
 
         <!-- Botón de publicar -->
         <div class="form-actions">
-          <ion-button type="submit" expand="block" class="publish-button" >Publicar</ion-button>
+          <ion-button type="submit" expand="block" class="publish-button">Publicar</ion-button>
         </div>
       </form>
     </ion-content>
@@ -57,6 +60,7 @@ import {
   newspaper,
   idCard,
   brush,
+  homeOutline,
 } from "ionicons/icons";
 import { ref, computed, reactive } from "vue";
 import { useRouter } from "vue-router";
@@ -141,7 +145,6 @@ const validateForm = () => {
   );
 };
 
-
 const onSubmitForm = () => {
   if (validateForm()) {
     console.log("formModel", JSON.stringify(formModel));
@@ -157,25 +160,43 @@ const toggleChange = () => {
 const toggleExit = () => {
   router.push('/login')
 }
+
+const goHome = () => {
+  router.push('/home')
+}
 </script>
 
 <style scoped>
-ion-content::part(background) {
-  background: transparent;
-}
-
-.topbar__title {
-  text-align: center;
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.ion-palette-dark ion-content::part(background) {
-  background-color: #1e1e1e;
+.topbar__icon {
+  font-size: 1.5rem;
 }
 
 .error-message {
-  color: #ff8800;
-  font-size: 0.7em;
+  color: var(--ion-color-danger);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.create-news-form {
+  margin: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .create-news-form {
+    margin: 1.2rem;
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-actions {
+  margin-top: 2rem;
+}
+
+.publish-button {
+  margin: 0 auto;
+  max-width: 300px;
 }
 </style>
