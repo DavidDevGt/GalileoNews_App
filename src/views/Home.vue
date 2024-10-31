@@ -45,6 +45,11 @@
               />
             </div>
           </ion-card>
+          <ion-fab title="Agregar Noticia" @click="goCreateNoticia" >
+            <ion-fab-button>
+              <ion-icon :icon="add"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
         </div>
         <div :class="` inicio-md-contactos ${tabActive === 'contactos' ? 'tab-visible' : ''}`" >
           <ion-card class="enlaces-card">
@@ -115,8 +120,8 @@
 </template>
 
 <script setup>
-import { IonPage, IonIcon, IonButton, IonButtons, IonCard, IonImg } from '@ionic/vue';
-import { sunnyOutline, moon, logOut, personCircle, book, bookmarkOutline, trashBin, newspaper, idCard, brush } from 'ionicons/icons';
+import { IonPage, IonIcon, IonButton, IonButtons, IonCard, IonImg, IonFab, IonFabButton } from '@ionic/vue';
+import { sunnyOutline, moon, logOut, personCircle, book, bookmarkOutline, trashBin, newspaper, idCard, brush, add } from 'ionicons/icons';
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
@@ -151,6 +156,22 @@ const noticiasEventos = ref([
     titulo: 'How we Run Out of Fresh Music ?',
     descripcion: 'Lorizzle i\'m in the shizzle dolizzle sit fizzle, consectetuer adipiscing elit. Nullizzle shizzlin dizzle velizzle, yo volutpizzle, things quizzle, dope vizzle, arcu. Pellentesque owned the bizzle',
     image_url: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRrJTG8Sj7ZNysABLLXH0m_mB_lZRzF-V4Me01ISGVSlzpY6Zyo'
+  },
+  {
+    usuario: 'GALILEO',
+    categoria: 'Novedades',
+    fecha: 'Sep 1, 2024',
+    titulo: 'How we Run Out of Fresh Music ?',
+    descripcion: 'Lorizzle i\'m in the shizzle dolizzle sit fizzle, consectetuer adipiscing elit. Nullizzle shizzlin dizzle velizzle, yo volutpizzle, things quizzle, dope vizzle, arcu. Pellentesque owned the bizzle',
+    image_url: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTEzoR6P8aIBqfnzi77baejynOQklaZHYS360f2PemtXJdHO5lZ'
+  },
+  {
+    usuario: 'TDS',
+    categoria: 'Informativa',
+    fecha: 'Ago 31, 2024',
+    titulo: 'How we Run Out of Fresh Music ?',
+    descripcion: 'Lorizzle i\'m in the shizzle dolizzle sit fizzle, consectetuer adipiscing elit. Nullizzle shizzlin dizzle velizzle, yo volutpizzle, things quizzle, dope vizzle, arcu. Pellentesque owned the bizzle',
+    image_url: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRrJTG8Sj7ZNysABLLXH0m_mB_lZRzF-V4Me01ISGVSlzpY6Zyo'
   }
 ]);
 
@@ -167,6 +188,10 @@ const contactosImportantes = ref([
 
 const logout = () => {
   router.push('login');
+};
+
+const goCreateNoticia = () => {
+  router.push('create');
 };
 
 const toggleChange = () => {
