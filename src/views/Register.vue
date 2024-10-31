@@ -162,6 +162,15 @@ const showSuccessAlert = async () => {
   await alert.present();
 };
 
+const showErrorAlert = async (errorMessage) => {
+  const alert = await alertController.create({
+    header: "ERROR",
+    message: errorMessage,
+    buttons: ["OK"],
+  });
+  await alert.present();
+};
+
 const onSubmitForm = async () => {
   if (validateForm()) {
     try {
@@ -171,9 +180,9 @@ const onSubmitForm = async () => {
         formModel.password
       );
       await showSuccessAlert();
-
       router.push("/login");
     } catch (error) {
+      await showErrorAlert('Error al registrar: ' + String(error && error.message));
       console.error("Error al registrar:", error);
     }
   } else {
