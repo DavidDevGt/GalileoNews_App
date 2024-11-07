@@ -4,19 +4,13 @@
             <div class="topbar">
                 <div class="topbar__title">
                     <div>
-                        <ion-icon
-                            :icon="happyOutline"
-                            class="topbar__icon"
-                        ></ion-icon>
+                        <ion-icon :icon="happyOutline" class="topbar__icon"></ion-icon>
                     </div>
                     <span>GalileoNews</span>
                     <div class="w-grow"></div>
                     <ion-buttons>
                         <ion-button color="dark" @click="toggleChange">
-                            <ion-icon
-                                :icon="isDark ? sunnyOutline : moon"
-                                class="topbar__icon"
-                            ></ion-icon>
+                            <ion-icon :icon="isDark ? sunnyOutline : moon" class="topbar__icon"></ion-icon>
                         </ion-button>
                     </ion-buttons>
                 </div>
@@ -26,61 +20,30 @@
                     <span>Galileo News</span>
                 </div>
                 <div id="register-login">
-                    <form
-                        id="login"
-                        name="login"
-                        class="margin-form"
-                        @submit.prevent="onSubmitForm"
-                    >
+                    <form id="login" name="login" class="margin-form" @submit.prevent="onSubmitForm">
                         <div class="container-form">
                             <div class="form-widget">
-                                <ion-input
-                                    v-model="formModel.email"
-                                    label-placement="stacked"
-                                    id="email"
-                                    type="text"
-                                    name="email"
-                                    label="Correo Electrónico"
-                                    placeholder="Ingresa tu correo"
-                                />
-                                <span
-                                    v-if="errors.email"
-                                    class="error-message"
-                                    >{{ errors.email }}</span
-                                >
+                                <ion-input v-model="formModel.email" label-placement="stacked" id="email" type="text"
+                                    name="email" label="Correo Electrónico" placeholder="Ingresa tu correo" />
+                                <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
                             </div>
                             <div class="form-widget">
-                                <ion-input
-                                    v-model="formModel.password"
-                                    label-placement="stacked"
-                                    id="password"
-                                    type="password"
-                                    name="password"
-                                    label="Contraseña"
-                                    placeholder="Ingresa tu contraseña"
-                                >
+                                <ion-input v-model="formModel.password" label-placement="stacked" id="password"
+                                    type="password" name="password" label="Contraseña"
+                                    placeholder="Ingresa tu contraseña">
                                     <ion-input-password-toggle></ion-input-password-toggle>
                                 </ion-input>
-                                <span
-                                    v-if="errors.password"
-                                    class="error-message"
-                                    >{{ errors.password }}</span
-                                >
+                                <span v-if="errors.password" class="error-message">{{ errors.password }}</span>
                             </div>
                             <div class="form-widget remember-divisor">
-                                <ion-checkbox
-                                    v-model="formModel.rememberMe"
-                                    id="rememberMe"
-                                ></ion-checkbox>
+                                <ion-checkbox v-model="formModel.rememberMe" id="rememberMe"></ion-checkbox>
                                 <label class="remember-me-txt" for="rememberMe">
                                     Recordar mi contraseña en esta computadora
                                 </label>
                             </div>
                             <div class="form-element">
                                 <div class="form-actions">
-                                    <ion-button type="submit" expand="block"
-                                        >Entrar</ion-button
-                                    >
+                                    <ion-button type="submit" expand="block">Entrar</ion-button>
                                 </div>
                             </div>
                         </div>
@@ -100,8 +63,7 @@
                             <a href="#" class="button">Soporte</a>
                         </span>
                         <span class="Faqs2">
-                            <a href="/login" @click.prevent="returnToRegister"
-                                >No tienes una cuenta?
+                            <a href="/login" @click.prevent="returnToRegister">No tienes una cuenta?
                             </a>
                         </span>
                     </div>
@@ -146,20 +108,18 @@ const errors = reactive({
 });
 
 const validateForm = () => {
-    errors.email = formModel.email
-        ? ""
-        : "El correo electrónico es obligatorio.";
+    errors.email = formModel.email ? "" : "El correo electrónico es obligatorio.";
     errors.password = formModel.password ? "" : "La contraseña es obligatoria.";
     return !errors.email && !errors.password;
 };
 
 const showErrorAlert = async (errorMessage) => {
-  const alert = await alertController.create({
-    header: "ERROR",
-    message: errorMessage,
-    buttons: ["OK"],
-  });
-  await alert.present();
+    const alert = await alertController.create({
+        header: "ERROR",
+        message: errorMessage,
+        buttons: ["OK"],
+    });
+    await alert.present();
 };
 
 const onSubmitForm = async () => {
@@ -179,15 +139,15 @@ const onSubmitForm = async () => {
 };
 
 const onGoogleSignIn = () => {
-  window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+    window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
 };
 
 const returnToRegister = () => {
-  router.push('/register');
+    router.push('/register');
 };
 
 const toggleChange = () => {
-  store.dispatch('darkLight/toggleDarkMode');
+    store.dispatch('darkLight/toggleDarkMode');
 };
 </script>
 
