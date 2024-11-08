@@ -21,15 +21,17 @@
       <!-- Formulario de creación de noticias -->
       <form id="create-news" name="create-news" class="create-news-form" @submit.prevent="onSubmitForm">
         <div class="form-group" v-for="(field, index) in formFields" :key="index">
-          <ion-input v-model="formModel[field.model]" label-placement="stacked" 
-          :id="field.model" 
-          :type="field.type"
-          :name="field.model" :label="field.label" 
-          :placeholder="field.placeholder" />
+          <!-- Manejo de input -->
+          <ion-input :value="formModel[field.model]" @ionChange="(e) => formModel[field.model] = e.detail.value"
+            label-placement="stacked" :id="index" :type="field.type" :name="field.model" :label="field.label"
+            :placeholder="field.placeholder" />
+
           <span v-if="errors[field.model]" class="error-message">{{
             errors[field.model]
           }}</span>
         </div>
+        <ion-input type="file" @change="handleFileChange" placeholder="Seleccione una imagen" />
+        <span v-if="errors.fileImage" class="error-message">{{ errors.fileImage }}</span>
 
         <!-- Botón de publicar -->
         <div class="form-actions">
@@ -71,13 +73,15 @@ const store = useStore();
 
 const isDark = computed(() => store.getters["darkLight/isDark"]);
 
+
+
 const formModel = reactive({
   nameNews: "",
   description: "",
   career: "",
   type: "",
   date: "",
-  image: ""
+  fileImage: "",
 });
 
 const errors = reactive({
@@ -86,7 +90,7 @@ const errors = reactive({
   career: "",
   type: "",
   date: "",
-  fileImage:""
+  fileImage: "",
 });
 
 const formFields = [
@@ -97,7 +101,7 @@ const formFields = [
     placeholder: "Ingresa el Titular",
   },
   {
-    model: "descriptrionNews",
+    model: "description",
     label: "Descripcion",
     type: "textarea",
     placeholder: "Ingresa el cuerpo de la noticia",
@@ -119,21 +123,21 @@ const formFields = [
     label: "Ingrese la fecha de evento",
     type: "date",
     placeholder: "Ingrese una fecha",
-  },
-  {
-    model: "fileImage",
-    label: "Seleccione una imagen",
-    type: "file",
-    placeholder: "Ingrese una imagen",
   }
 ];
 
+
+
+const handleFileChange = (event) => {
+  formModel.fileImage = event.target.files[0]; // Almacena el archivo seleccionado
+};
+
 const validateForm = () => {
-  errors.nameNews = formModel.nameNews ? "" : "El Titular es obligatorio.";
-  errors.descriptrionNews = formModel.lastName ? "" : "La descripcion es obligatoria";
-  errors.career = formModel.career ? "" : "La campo carrera es obligatorio";
-  errors.type = formModel.type ? "" : "El tipo de noticia es obligatorio";
-  errors.date = formModel.date ? "" : "El campo fecha es obligatorio";
+  errors.nameNews = formModel.nameNews.trim() ? "" : "El Titular es obligatorio.";
+  errors.description = formModel.description.trim() ? "" : "La descripción es obligatoria.";
+  errors.career = formModel.career.trim() ? "" : "El campo carrera es obligatorio.";
+  errors.type = formModel.type.trim() ? "" : "El tipo de noticia es obligatorio.";
+  errors.date = formModel.date.trim() ? "" : "El campo fecha es obligatorio.";
   errors.fileImage = formModel.fileImage ? "" : "La imagen es obligatoria"
   return (
     !errors.nameNews &&
@@ -144,6 +148,7 @@ const validateForm = () => {
     !errors.fileImage
   );
 };
+
 
 const onSubmitForm = () => {
   if (validateForm()) {
@@ -188,6 +193,7 @@ const goHome = () => {
 }
 
 .form-group {
+  width: 94%;
   margin-bottom: 1rem;
 }
 
