@@ -170,8 +170,7 @@ const onSubmitForm = async () => {
             await storage.set('token', response.token);
             router.push('/home');
         } catch (error) {
-            await showErrorAlert('Error al iniciar sesión: ' + String(error && error.message));
-            console.error('Error al iniciar sesión:', error);
+            await showErrorAlert(error.response.data.message)
         }
     } else {
         console.log("Validation failed");
