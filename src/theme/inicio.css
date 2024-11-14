@@ -7,7 +7,7 @@ div.inicio-container {
 .inicio-noticias {
   position: relative;
   display: flex;
-  width: 4rem;
+  width: 20rem;
   flex-grow: 1;
   flex-direction: column;
   padding: 2rem 4rem;
@@ -28,8 +28,9 @@ div.inicio-container {
   flex-grow: 1;
   flex-direction: column;
   padding: 2rem 4rem;
-  max-height: 82vh;
+  max-height: 95vh;
   overflow: auto;
+  padding-bottom: 5rem;
 }
 
 .inicio-md-contactoss ion-fab {
@@ -178,6 +179,7 @@ ion-footer {
 
   .inicio-md-contactos {
     padding: 1rem;
+    max-height: 85vh;
   }
 }
 
@@ -192,7 +194,6 @@ ion-footer {
 
   .inicio-noticias ion-fab {
     bottom: 6rem;
-    left: 105%;
   }
 
   .inicio-md-contactos {
