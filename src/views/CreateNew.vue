@@ -2,13 +2,16 @@
   <ion-page :class="{ 'ion-palette-dark': isDark }">
     <ion-content>
       <ion-toolbar :color="isDark ? 'medium' : 'light'">
+
         <ion-buttons slot="start">
-          <ion-button @click="goHome">
-            <ion-icon class="topbar__icon" :icon="homeOutline"></ion-icon>
-          </ion-button>
           <ion-button @click="toggleExit">
             <ion-icon class="topbar__icon" :icon="logOut"></ion-icon>
           </ion-button>
+
+          <ion-button @click="goHome">
+            <ion-icon class="topbar__icon" :icon="homeOutline"></ion-icon>
+          </ion-button>
+
         </ion-buttons>
         <ion-buttons slot="end">
           <ion-button @click="toggleChange">
@@ -48,23 +51,14 @@ import {
   IonIcon,
   IonButton,
   IonButtons,
-  IonCard,
-  IonImg,
 } from "@ionic/vue";
 import {
   sunnyOutline,
   moon,
   logOut,
-  personCircle,
-  book,
-  bookmarkOutline,
-  trashBin,
-  newspaper,
-  idCard,
-  brush,
   homeOutline,
 } from "ionicons/icons";
-import { ref, computed, reactive } from "vue";
+import { computed, reactive } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 
@@ -204,5 +198,12 @@ const goHome = () => {
 .publish-button {
   margin: 0 auto;
   max-width: 300px;
+}
+
+/* Estilo para los placeholders de los inputs */
+ion-input::part(native)::placeholder {
+  color: #c1c1c1; /* Placeholder amigable */
+  font-size: 0.9em;
+  font-style: italic;
 }
 </style>

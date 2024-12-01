@@ -29,3 +29,46 @@
 .ion-palette-dark.md {
   --ion-item-background: #1c1c1d;
 }
+
+input::placeholder {
+  color: #888;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+input:focus::placeholder {
+  color: #ccc;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 2px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: #fff;
+  border-color: var(--main-galileo-color);
+  outline: none;
+  color: #000;
+}
+
+/* Modo oscuro */
+.ion-palette-dark input {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.ion-palette-dark input:focus {
+  background: #444;
+  border-color: var(--link-galileo-color);
+}
+
+.ion-palette-dark input::placeholder {
+  color: #aaa;
+}

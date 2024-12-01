@@ -84,7 +84,7 @@ import {
     IonCheckbox,
 } from "@ionic/vue";
 import { happyOutline, sunnyOutline, moon, logoGoogle } from "ionicons/icons";
-import { ref, reactive, computed } from "vue";
+import { reactive, computed } from "vue";
 import authService from "@/services/authService";
 import storage from "@/services/storageService";
 import { useRouter } from 'vue-router';
@@ -138,7 +138,7 @@ const onSubmitForm = async () => {
 };
 
 const onGoogleSignIn = () => {
-    window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+    window.location.href = `${import.meta.env.VITE_BACKEND_URL}/auth/google`;
 };
 
 const returnToRegister = () => {
