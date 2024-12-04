@@ -186,7 +186,8 @@ const contactosImportantes = ref([
   { nombre: 'Chris Brown', puesto: 'Head of Product Management, TechPioneers', correo_electronico: 'chrisbrown@example.com', telefono: '(503) 3894-7493' }
 ])
 
-const logout = () => {
+const logout = async () => {
+  await storage.remove("token");
   router.push('login');
 };
 

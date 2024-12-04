@@ -23,7 +23,8 @@
   const router = useRouter();
   const isDark = ref(false);
   
-  const logout = () => {
+  const logout = async () => {
+    await storage.remove("token");
     router.push('login');
   };
   
