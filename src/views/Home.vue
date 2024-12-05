@@ -187,7 +187,6 @@ const contactosImportantes = ref([
 ])
 
 const logout = async () => {
-  await storage.remove("token");
   router.push('login');
 };
 

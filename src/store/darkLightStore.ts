@@ -1,4 +1,3 @@
-import { createStore } from 'vuex';
 import { ActionContext } from 'vuex';
 
 interface DarkLightState {
