@@ -26,4 +26,8 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
   },
+  build: {
+    target: 'esnext', // Soporta top-level await
+    chunkSizeWarningLimit: 1000,
+  },
 });
