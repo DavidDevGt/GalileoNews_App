@@ -8,6 +8,40 @@
 /* This sets a different item border color for the default theme on ios and md */
 :root {
   --ion-item-border-color: var(--ion-background-color-step-200);
+  /* Colores principales */
+  --main-galileo-color: rgb(184, 154, 89);
+  --main-galileo-color-focus: rgb(202, 166, 89);
+  --link-galileo-color: rgb(180, 95, 8);
+  --link-galileo-color-focus: rgb(153, 83, 14);
+
+  /* Colores base */
+  --background-color-light: #f9f9f9;
+  --background-color-dark: #1e1e1e;
+  --text-color-light: #333;
+  --text-color-dark: #fff;
+
+  /* Colores de bordes */
+  --border-color-light: #ccc;
+  --border-color-dark: #555;
+
+  /* Colores de ítems */
+  --item-background-light: #fff;
+  --item-background-dark: #1c1c1d;
+
+  /* Fuentes */
+  --font-family-main: "Poppins", Helvetica, sans-serif;
+  --font-size-small: 0.8rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.5rem;
+
+  /* Sombreados */
+  --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-dark: 0 4px 6px rgba(255, 255, 255, 0.1);
+
+  /* Espaciado */
+  --padding-small: 0.5rem;
+  --padding-medium: 1rem;
+  --padding-large: 2rem;
 }
 
 /* This sets a different background and item background for the default theme on ios */
@@ -28,47 +62,4 @@
 .ion-palette-dark.ios,
 .ion-palette-dark.md {
   --ion-item-background: #1c1c1d;
-}
-
-input::placeholder {
-  color: #888;
-  font-size: 0.9em;
-  font-style: italic;
-}
-
-input:focus::placeholder {
-  color: #ccc;
-}
-
-input {
-  font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 2px;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-input:focus {
-  background: #fff;
-  border-color: var(--main-galileo-color);
-  outline: none;
-  color: #000;
-}
-
-/* Modo oscuro */
-.ion-palette-dark input {
-  background: #333;
-  color: #fff;
-  border: 1px solid #555;
-}
-
-.ion-palette-dark input:focus {
-  background: #444;
-  border-color: var(--link-galileo-color);
-}
-
-.ion-palette-dark input::placeholder {
-  color: #aaa;
 }

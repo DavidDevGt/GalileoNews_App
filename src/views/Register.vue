@@ -1,6 +1,6 @@
 <template>
   <ion-page :class="{ 'ion-palette-dark': isDark }">
-    <gn-ion-content>
+    <ion-content>
       <div class="gn-topbar">
         <div class="gn-topbar__title">
           <div>
@@ -76,7 +76,7 @@
           </div>
         </div>
       </div>
-    </gn-ion-content>
+    </ion-content>
   </ion-page>
 </template>
 
@@ -206,7 +206,7 @@ const toggleChange = () => {
 
 <style scoped>
 /* Fondo claro y oscuro */
-gn-ion-content::part(background) {
+ion-content::part(background) {
   background: transparent;
 }
 </style>
