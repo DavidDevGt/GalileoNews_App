@@ -1,31 +1,48 @@
 .navbar {
-    --background: transparent;
-    box-shadow: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .navbar-title {
-    font-size: 2.15rem;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    flex-grow: 1;
-  }
-  
-  ion-button {
-    --background: transparent;
-    --color: white;
-  }
-  
-  ion-img {
-    width: 40px;
-    height: 40px;
-  }
+  --background: transparent;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --icon-color: white;
 
-  .bi {
-    font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  box-shadow: none;
+  border-bottom: 1px solid var(--border-color);
+
+  /* Ocultar en pantallas móviles */
+  display: none;
+
+  /* Mostrar solo en pantallas de escritorio */
+  @media (min-width: 768px) {
+    display: flex;
   }
+}
+
+.navbar-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--icon-color);
+  text-align: center;
+}
+
+.navbar-start,
+.navbar-end {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.navbar-theme-icon {
+  font-size: 1.8rem;
+  color: var(--icon-color);
+}
+
+ion-button {
+  --background: transparent;
+  --color: var(--icon-color);
+}

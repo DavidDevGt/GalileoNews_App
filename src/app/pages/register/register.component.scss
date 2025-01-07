@@ -1,0 +1,191 @@
+// Variables
+$primary-color: #B8860B;
+$primary-hover: #E6BE8A;
+$background-color: #949494;
+$text-color: #333;
+$border-radius: 10px;
+$spacing-unit: 1rem;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin card-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@mixin responsive($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Styles
+.container-fluid {
+  background-color: $background-color;
+  min-height: 100vh;
+  @include flex-center;
+  padding: $spacing-unit;
+  
+  @include responsive($mobile) {
+    padding: 0;
+  }
+}
+
+.card {
+  border-radius: $border-radius;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  margin: $spacing-unit auto;
+  @include card-shadow;
+  
+  @include responsive($mobile) {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  &-body {
+    padding: $spacing-unit * 1.5;
+    
+    @include responsive($mobile) {
+      padding: $spacing-unit;
+    }
+  }
+}
+
+.logo-container {
+  @include flex-center;
+  margin-bottom: $spacing-unit * 2;
+  
+  img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: $spacing-unit * 0.5;
+    
+    @include responsive($mobile) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: $text-color;
+    
+    @include responsive($mobile) {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: $spacing-unit * 1.25;
+  
+  @include responsive($mobile) {
+    margin-bottom: $spacing-unit;
+  }
+
+  label {
+    display: block;
+    margin-bottom: $spacing-unit * 0.25;
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+}
+
+.form-control {
+  width: 100%;
+  padding: $spacing-unit * 0.75;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  
+  @include responsive($mobile) {
+    padding: $spacing-unit * 0.5;
+    font-size: 0.85rem;
+  }
+
+  &::placeholder {
+    color: #999;
+  }
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: $spacing-unit * 0.75;
+  width: 100%;
+  
+  @include responsive($mobile) {
+    padding: $spacing-unit * 0.5;
+  }
+
+  &-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    margin-top: $spacing-unit;
+
+    &:hover {
+      background-color: $primary-hover;
+      border-color: $primary-hover;
+    }
+  }
+
+  &-outline-primary {
+    @include flex-center;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    background: white;
+    color: $text-color;
+    margin: $spacing-unit * 0.5 0;
+
+    i {
+      margin-right: $spacing-unit * 0.5;
+    }
+  }
+}
+
+.alternative-access {
+  text-align: center;
+  margin-top: $spacing-unit * 1.5;
+  
+  p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: $spacing-unit 0;
+  }
+}
+
+.links-container {
+  margin-top: $spacing-unit * 1.5;
+  text-align: center;
+  
+  @include responsive($mobile) {
+    margin-top: $spacing-unit;
+  }
+  
+  .text-primary {
+    display: block;
+    color: $primary-color;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin: $spacing-unit * 0.5 0;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

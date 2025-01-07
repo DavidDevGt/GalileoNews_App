@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-toolbar class="navbar d-flex align-items-center justify-content-between">
+  <ion-toolbar class="navbar">
     <!-- Logo a la izquierda -->
-    <ion-buttons slot="start" class="d-flex align-items-center mt-1">
+    <ion-buttons slot="start" class="navbar-start">
       <ion-button>
-        <img src="assets/icon/favicon.png" alt="Logo" style="width: 40px; height: 40px;">
+        <ion-icon src="assets/icon/favicon.png" class="navbar-logo"></ion-icon>
       </ion-button>
     </ion-buttons>
 
     <!-- Título centrado -->
-    <ion-title class="navbar-title text-center mt-1">GalileoNews</ion-title>
+    <ion-title class="navbar-title">GalileoNews</ion-title>
 
     <!-- Botón de modo oscuro/claro a la derecha -->
-    <ion-buttons slot="end" class="d-flex align-items-center mt-1">
-      <ion-button (click)="toggleTheme()">
-        <i [class]="isDarkTheme ? 'bi bi-sun-fill' : 'bi bi-moon-fill'"></i>
+    <ion-buttons slot="end" class="navbar-end">
+      <ion-button (click)="toggleTheme()" aria-label="Toggle theme">
+        <ion-icon [name]="isDarkTheme ? 'sunny-outline' : 'moon-outline'" class="navbar-theme-icon"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
