@@ -1,0 +1,31 @@
+.navbar {
+    --background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-title {
+    font-size: 2.15rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  ion-button {
+    --background: transparent;
+    --color: white;
+  }
+  
+  ion-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bi {
+    font-size: 2.2rem;
+  }

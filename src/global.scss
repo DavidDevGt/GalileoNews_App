@@ -37,3 +37,17 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+  }
+  
+  body.dark-mode {
+    background-color: #121212; /* Fondo oscuro */
+    color: white; /* Texto claro */
+  }
+  
+  body.light-mode {
+    background-color: #ffffff; /* Fondo claro */
+    color: #121212; /* Texto oscuro */
+  }
