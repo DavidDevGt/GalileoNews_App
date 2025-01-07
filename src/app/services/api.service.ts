@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root', // Hace que esté disponible en toda la aplicación
+  providedIn: 'root',
 })
 export class ApiService {
   private apiUrl = 'https://api-galileojs.davidwebgt.com'; // Reemplaza con la URL de tu API
