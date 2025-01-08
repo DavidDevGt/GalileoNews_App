@@ -13,7 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 export class AppComponent {
   data: any;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     // Llamada GET de ejemplo
@@ -26,5 +26,13 @@ export class AppComponent {
         console.error('Ocurrió un error:', error);
       }
     );
+
+    // this.apiService.getData('/api/categorias').subscribe(
+      // (response) => console.log('GET Response: ', response),
+      // (error) => console.log('GET Error: ', error));
+
   }
+
 }
+
+// Este es un comentario para que David Vargas vea algún cambio
