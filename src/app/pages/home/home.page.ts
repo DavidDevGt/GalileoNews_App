@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, NavbarComponent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, NavbarComponent, RouterModule],
 })
 export class HomePage {
   isDarkMode = false;
