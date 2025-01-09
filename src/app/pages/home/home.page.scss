@@ -1,94 +1,106 @@
 // Variables
-$primary-color: #B8860B;
+$primary-color: #b8860b;
 $primary-hover: #9e6f31;
+$secondary-color: #aaaaaa;
+$secondary-hover: #62615f;
 $background-color: #949494;
 $text-color: #333;
 $border-radius: 10px;
 $spacing-unit: 1rem;
 
-// Mixins
-@mixin flex-center {
+// Contenedor Principal
+.container-fluid {
+  background-color: $background-color;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@mixin card-shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-// Styles
-.container-fluid {
-  background-color: $background-color;
-  min-height: 100vh;
-  @include flex-center;
-}
-
+// Tarjeta
 .card {
   border-radius: $border-radius;
   width: 400px;
-  padding: $spacing-unit;
-  @include card-shadow;
+  padding: $spacing-unit * 2;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
   &-body {
     text-align: center;
   }
 }
 
+.btn-login {
+  color: white;
+}
+
+// Logo y Título
 .logo-container {
   margin-bottom: $spacing-unit * 1.5;
-  
-  img {
-    width: 50px;
-    height: 50px;
+
+  ion-img {
+    width: 60px;
+    height: 60px;
     margin-bottom: $spacing-unit * 0.5;
   }
-}
 
-h2 {
-  font-size: 1.5rem;
-  color: $text-color;
-  margin-top: $spacing-unit * 0.5;
-}
-
-.form-group {
-  margin-bottom: $spacing-unit;
-  text-align: left;
-}
-
-.btn {
-  &-primary {
-    background-color: $primary-color;
-    border-color: $primary-color;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: $primary-hover;
-      border-color: $primary-hover;
-    }
-  }
-
-  &-outline-primary {
-    @include flex-center;
-    margin-bottom: $spacing-unit * 0.5;
-
-    i {
-      margin-right: $spacing-unit * 0.5;
-    }
-  }
-}
-
-.alternative-access {
-  margin-top: $spacing-unit * 1.5;
-  
-  p {
-    margin-bottom: $spacing-unit;
-  }
-
-  .text-primary {
-    display: block;
+  h2 {
+    font-size: 1.8rem;
+    color: $text-color;
     margin-top: $spacing-unit * 0.5;
+    font-weight: bold;
+  }
+}
+
+// Estilos para el formulario
+form {
+  .form-group {
+    margin-bottom: $spacing-unit * 1.5;
+
+    ion-item {
+      margin-bottom: $spacing-unit;
+    }
+  }
+
+  ion-button {
+    margin-top: $spacing-unit;
+  }
+}
+
+.btn-google {
+  color: white;
+}
+// Divisor entre Login y Google
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: $spacing-unit * 2 0;
+
+  hr {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background: $secondary-color;
+    margin: 0 $spacing-unit;
+  }
+
+  span {
+    color: $text-color;
+    font-weight: bold;
+  }
+}
+
+// Enlaces secundarios
+.alternative-access {
+  margin-top: $spacing-unit;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: $primary-color;
     text-decoration: none;
+    font-size: 0.9rem;
 
     &:hover {
       text-decoration: underline;

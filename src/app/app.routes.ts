@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { RegisterComponent } from './pages/register/register.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
@@ -12,4 +13,5 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'register', component: RegisterComponent },
+  { path: 'dashboard', component: DashboardComponent },
 ];

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { Router, RouterModule } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { BaseComponentComponent } from '../../components/base-component/base-component.component';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, NavbarComponent, RouterModule],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+  imports: [IonicModule, BaseComponentComponent],
+  standalone: true,
 })
 export class HomePage {
   isDarkMode = false;
@@ -23,7 +24,6 @@ export class HomePage {
   }
 
   navigateToRegister() {
-    // Navega a la ruta '/register'
     this.router.navigate(['/register']);
   }
 }
