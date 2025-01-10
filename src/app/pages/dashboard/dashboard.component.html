@@ -1,26 +1,103 @@
 <app-base-component>
+  <!-- Espacio entre navbar y contenido -->
+  <div class="spacer"></div>
+
   <ion-grid>
     <ion-row>
-      <!-- Columna principal, contenido principal -->
-      <ion-col size-md="8" size-sm="12">
+      <!-- Panel de Noticias -->
+      <ion-col size-md="9" size-sm="12">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Contenido Principal</ion-card-title>
+            <ion-card-title>Noticias Recientes</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            Este es el contenido principal de la página.
+            <!-- Lista de Noticias -->
+            <ion-list>
+              <!-- Noticia 1 -->
+              <ion-item>
+                <ion-thumbnail slot="start">
+                  <img src="assets/img/news1.jpg" alt="Noticia 1" />
+                </ion-thumbnail>
+                <ion-label>
+                  <h2>Título de la Noticia 1</h2>
+                  <p>Descripción breve de la noticia 1.</p>
+                  <a href="https://ejemplo.com/noticia1" target="_blank"
+                    >Leer más</a
+                  >
+                </ion-label>
+              </ion-item>
+
+              <!-- Noticia 2 -->
+              <ion-item>
+                <ion-thumbnail slot="start">
+                  <img src="assets/img/news2.jpg" alt="Noticia 2" />
+                </ion-thumbnail>
+                <ion-label>
+                  <h2>Título de la Noticia 2</h2>
+                  <p>Descripción breve de la noticia 2.</p>
+                  <a href="https://ejemplo.com/noticia2" target="_blank"
+                    >Leer más</a
+                  >
+                </ion-label>
+              </ion-item>
+
+              <!-- Noticia 3 -->
+              <ion-item>
+                <ion-thumbnail slot="start">
+                  <img src="assets/img/news3.jpg" alt="Noticia 3" />
+                </ion-thumbnail>
+                <ion-label>
+                  <h2>Título de la Noticia 3</h2>
+                  <p>Descripción breve de la noticia 3.</p>
+                  <a href="https://ejemplo.com/noticia3" target="_blank"
+                    >Leer más</a
+                  >
+                </ion-label>
+              </ion-item>
+            </ion-list>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
-      <!-- Columna secundaria, contenido complementario -->
-      <ion-col size-md="4" size-sm="12">
-        <ion-card color="secondary">
+      <!-- Columna Secundaria -->
+      <ion-col size-md="3" size-sm="12">
+        <!-- Tarjeta: Enlaces Importantes -->
+        <ion-card>
           <ion-card-header>
-            <ion-card-title>Contenido Secundario</ion-card-title>
+            <ion-card-title>Enlaces Importantes</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            Este es el contenido secundario o complementario.
+            <ion-list>
+              <ion-item *ngFor="let enlace of enlacesImportantes">
+                <ion-icon slot="start" name="link-outline"></ion-icon>
+                <ion-label>
+                  <a [href]="enlace.url" target="_blank">{{ enlace.texto }}</a>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- Espaciador opcional entre tarjetas -->
+        <div class="card-spacer"></div>
+
+        <!-- Tarjeta: Contactos Importantes -->
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Contactos Importantes</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let contacto of contactosImportantes">
+                <ion-avatar slot="start">
+                  <img [src]="contacto.avatar" [alt]="contacto.nombre" />
+                </ion-avatar>
+                <ion-label>
+                  <h2>{{ contacto.nombre }}</h2>
+                  <p>{{ contacto.correo }}</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
           </ion-card-content>
         </ion-card>
       </ion-col>

@@ -1,0 +1,8 @@
+:root {
+    --navbar-height: 60px;
+}
+
+.spacer {
+    height: var(--navbar-height, 60px);
+    background-color: transparent;
+}
