@@ -1,6 +1,8 @@
 // Variables
-$primary-color: #B8860B;
-$primary-hover: #E6BE8A;
+$primary-color: #b8860b;
+$primary-hover: #e6be8a;
+$secondary-color: #aaaaaa;
+$secondary-hover: #62615f;
 $background-color: #949494;
 $text-color: #333;
 $border-radius: 10px;
@@ -35,7 +37,7 @@ $desktop: 992px;
   min-height: 100vh;
   @include flex-center;
   padding: $spacing-unit;
-  
+
   @include responsive($mobile) {
     padding: 0;
   }
@@ -48,7 +50,7 @@ $desktop: 992px;
   background: #fff;
   margin: $spacing-unit auto;
   @include card-shadow;
-  
+
   @include responsive($mobile) {
     margin: 0;
     border-radius: 0;
@@ -57,7 +59,7 @@ $desktop: 992px;
 
   &-body {
     padding: $spacing-unit * 1.5;
-    
+
     @include responsive($mobile) {
       padding: $spacing-unit;
     }
@@ -67,12 +69,12 @@ $desktop: 992px;
 .logo-container {
   @include flex-center;
   margin-bottom: $spacing-unit * 2;
-  
+
   img {
     width: 40px;
     height: 40px;
     margin-bottom: $spacing-unit * 0.5;
-    
+
     @include responsive($mobile) {
       width: 32px;
       height: 32px;
@@ -83,7 +85,7 @@ $desktop: 992px;
     font-size: 1.25rem;
     margin: 0;
     color: $text-color;
-    
+
     @include responsive($mobile) {
       font-size: 1.1rem;
     }
@@ -92,7 +94,7 @@ $desktop: 992px;
 
 .form-group {
   margin-bottom: $spacing-unit * 1.25;
-  
+
   @include responsive($mobile) {
     margin-bottom: $spacing-unit;
   }
@@ -111,7 +113,7 @@ $desktop: 992px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 0.9rem;
-  
+
   @include responsive($mobile) {
     padding: $spacing-unit * 0.5;
     font-size: 0.85rem;
@@ -121,22 +123,24 @@ $desktop: 992px;
     color: #999;
   }
 }
-
 .btn {
   border-radius: 5px;
   font-size: 0.9rem;
   padding: $spacing-unit * 0.75;
   width: 100%;
-  
+  text-align: center;
+
   @include responsive($mobile) {
     padding: $spacing-unit * 0.5;
   }
 
+  // Botón Primario (Login y Registro)
   &-primary {
     background-color: $primary-color;
     border-color: $primary-color;
     color: white;
     margin-top: $spacing-unit;
+    font-weight: bold;
 
     &:hover {
       background-color: $primary-hover;
@@ -144,16 +148,29 @@ $desktop: 992px;
     }
   }
 
+  // Botón de Google o Accesos Alternativos
   &-outline-primary {
     @include flex-center;
     flex-direction: row;
-    border: 1px solid #ddd;
+    border: 1px solid $secondary-color;
     background: white;
-    color: $text-color;
+    color: $secondary-color;
     margin: $spacing-unit * 0.5 0;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $secondary-hover;
+      color: white;
+      border-color: $secondary-hover;
+    }
 
     i {
       margin-right: $spacing-unit * 0.5;
+      color: $secondary-color;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 }
@@ -161,7 +178,7 @@ $desktop: 992px;
 .alternative-access {
   text-align: center;
   margin-top: $spacing-unit * 1.5;
-  
+
   p {
     color: #666;
     font-size: 0.9rem;
@@ -172,18 +189,18 @@ $desktop: 992px;
 .links-container {
   margin-top: $spacing-unit * 1.5;
   text-align: center;
-  
+
   @include responsive($mobile) {
     margin-top: $spacing-unit;
   }
-  
+
   .text-primary {
     display: block;
     color: $primary-color;
     text-decoration: none;
     font-size: 0.85rem;
     margin: $spacing-unit * 0.5 0;
-    
+
     &:hover {
       text-decoration: underline;
     }

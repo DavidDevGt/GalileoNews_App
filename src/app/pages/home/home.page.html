@@ -1,10 +1,15 @@
 <app-base-component>
   <div class="container-fluid">
-    <div class="card">
+    <div class="card shadow">
       <div class="card-body">
         <!-- Logo -->
-        <div class="logo-container">
-          <ion-img src="assets/icon/logo_G.png" alt="Logo"></ion-img>
+        <div class="logo-container text-center mb-4">
+          <img
+            src="assets/icon/logo_G.png"
+            alt="Logo"
+            class="mb-3"
+            style="width: 60px; height: 60px"
+          />
           <h2>Galileo News</h2>
         </div>
 
@@ -12,54 +17,54 @@
         <form>
           <!-- Correo Electrónico -->
           <div class="form-group">
-            <ion-item>
-              <ion-label position="stacked">Correo Electrónico</ion-label>
-              <ion-input
-                type="email"
-                placeholder="Ingresa tu correo"
-                required
-              ></ion-input>
-            </ion-item>
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Ingresa tu correo"
+              required
+            />
           </div>
 
           <!-- Contraseña -->
           <div class="form-group">
-            <ion-item>
-              <ion-label position="stacked">Contraseña</ion-label>
-              <ion-input
-                type="password"
-                placeholder="Ingresa tu contraseña"
-                required
-              ></ion-input>
-            </ion-item>
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Ingresa tu contraseña"
+              required
+            />
           </div>
 
           <!-- Recordar contraseña -->
-          <ion-item lines="none">
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-label>Recordar mi contraseña en esta computadora</ion-label>
-          </ion-item>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="rememberMe" />
+            <label class="form-check-label" for="rememberMe">
+              Recordar mi contraseña en esta computadora
+            </label>
+          </div>
 
           <!-- Botón Iniciar Sesión -->
-          <ion-button expand="block" class="btn-login" type="submit">
-            Entrar
-          </ion-button>
+          <button type="submit" class="btn btn-login w-100">Entrar</button>
         </form>
 
         <!-- Divider -->
-        <div class="divider">
+        <div class="divider mt-4 mb-4">
           <hr />
           <span>O</span>
           <hr />
         </div>
 
         <!-- Acceso con Google -->
-        <ion-button expand="block" color="primary" class="btn-google">
-          <i class="bi bi-google" slot="start"></i> Acceder con Google
-        </ion-button>
+        <button class="btn btn-google w-100">
+          <i class="bi bi-google me-2"></i> Acceder con Google
+        </button>
 
         <!-- Links secundarios -->
-        <div class="alternative-access">
+        <div class="alternative-access mt-3">
           <a href="#" class="text-primary">Soporte</a>
           <a href="/register" class="text-primary">No tienes una cuenta?</a>
         </div>
