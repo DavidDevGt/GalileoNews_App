@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,9 +10,15 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  // Método GET
-  getData(endpoint: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${endpoint}`);
+  // Método POST (REGISTER NEW USER)
+  postDataNewUser(endpoint: string, data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${endpoint}`, data);
+  }
+
+  // Método GET (REGISTER NEW USER)
+  getData(endpoint: string, token: string): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get(`${this.apiUrl}/${endpoint}`,{headers});
   }
 
   // Método POST

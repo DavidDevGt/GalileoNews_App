@@ -4,29 +4,32 @@
       <!-- Logo -->
       <div class="logo-container">
         <img src="assets/icon/logo_G.png" alt="Logo" class="img-fluid">
-        <h2>GalileoNews</h2>
+        <h2>Galileo News</h2>
       </div>
 
       <!-- Register Form -->
-      <form class="registration-form">
+      <form #form="ngForm" class="registration-form" (ngSubmit)="onSubmit(form)">
         <div class="form-group">
-          <label for="name" class="form-label">Nombre de Usuario</label>
-          <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre de usuario" required>
+          <label for="username" class="form-label">Nombre de Usuario</label>
+          <input type="text" class="form-control" id="username" placeholder="Ingresa tu nombre de usuario"
+            maxlength="15" (keypress)="onKeyPress($event)" [(ngModel)]="username" name="username" required>
         </div>
 
         <div class="form-group">
           <label for="email" class="form-label">Correo Electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" required>
+          <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" [(ngModel)]="email" name="email" required>
         </div>
 
         <div class="form-group">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" placeholder="Crea una contraseña" required>
+          <input type="password" class="form-control" id="password" placeholder="Crea una contraseña" minlength="8"
+            [(ngModel)]="password" name="password" required>
         </div>
 
         <div class="form-group">
           <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
-          <input type="password" class="form-control" id="confirm-password" placeholder="Repite tu contraseña" required>
+          <input type="password" class="form-control" id="confirm-password" placeholder="Repite tu contraseña"
+            minlength="8" (keypress)="onKeyPressPass($event)" [(ngModel)]="confirm_password" name="confirm_password" required>
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Registrarse</button>

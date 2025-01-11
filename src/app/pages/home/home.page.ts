@@ -22,8 +22,4 @@ export class HomePage {
     this.isDarkMode = !this.isDarkMode;
     document.body.classList.toggle('dark', this.isDarkMode);
   }
-
-  navigateToRegister() {
-    this.router.navigate(['/register']);
-  }
 }
