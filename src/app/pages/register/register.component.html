@@ -9,27 +9,46 @@
 
       <!-- Register Form -->
       <form #form="ngForm" class="registration-form" (ngSubmit)="onSubmit(form)">
+        <!-- USER -->
         <div class="form-group">
           <label for="username" class="form-label">Nombre de Usuario</label>
           <input type="text" class="form-control" id="username" placeholder="Ingresa tu nombre de usuario"
-            maxlength="15" (keypress)="onKeyPress($event)" [(ngModel)]="username" name="username" required>
+            (input)="validateUsername()" (keypress)="stopSymbolUser($event)" [(ngModel)]="username" name="username"
+            [ngClass]="{'is-invalid': !userValid}" required>
+          <div *ngIf="!userValid && userTouched" class="invalid-feedback">
+            El nombre de usuario debe tener minimo 7 caracteres
+          </div>
         </div>
-
+        <!-- EMAIL -->
         <div class="form-group">
           <label for="email" class="form-label">Correo Electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" [(ngModel)]="email" name="email" required>
+          <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" (input)="validateEmail()"
+            [(ngModel)]="email" name="email" [ngClass]="{'is-invalid': !emailValid}" required>
+          <div *ngIf="!emailValid && emailTouched" class="invalid-feedback">
+            Ingresa un correo electrónico válido.
+          </div>
         </div>
-
+        <!-- PASSWORD -->
         <div class="form-group">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" placeholder="Crea una contraseña" minlength="8"
-            [(ngModel)]="password" name="password" required>
+          <input type="password" class="form-control" id="password" placeholder="Crea una contraseña"
+            (input)="validatePassword()" [(ngModel)]="password" name="password"
+            [ngClass]="{'is-invalid': !passwordValid}" required>
+          <div *ngIf="!passwordValid && passwordTouched" class="invalid-feedback">
+            La contraseña debe tener al menos 8 caracteres y debe incluir al menos una mayúscula, una minúscula y un
+            número.
+          </div>
         </div>
 
+        <!-- REPEAT PASSWORD -->
         <div class="form-group">
           <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
           <input type="password" class="form-control" id="confirm-password" placeholder="Repite tu contraseña"
-            minlength="8" (keypress)="onKeyPressPass($event)" [(ngModel)]="confirm_password" name="confirm_password" required>
+            minlength="8" (input)="validateMatchPass()" [(ngModel)]="confirmPassword" name="confirmPassword"
+            [ngClass]="{'is-invalid': !matchPassword}" required>
+          <div *ngIf="!matchPassword && confirmPasswordTouched" class="invalid-feedback">
+            Las contraseñas no coinciden.
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Registrarse</button>

@@ -16,16 +16,17 @@ export class AppComponent {
 
   ngOnInit() {
     // Llamada GET de ejemplo
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsImVtYWlsIjoidGVzdDVAZ21haWwuY29tIiwiaWF0IjoxNzM2NDcwMzc3LCJleHAiOjE3MzY0NzM5Nzd9.Be0zLbd5iT00-Zk2UE7QCN8CdoCcPP1bjT6UOB2PjKc'
-    this.apiService.getData('api/categorias',token).subscribe(
-      (response) => {
-        console.log('Datos recibidos:', response);
-        this.data = response;
-      },
-      (error) => {
-        console.error('Ocurrió un error:', error);
-      }
-    );
+    
+    // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsImVtYWlsIjoidGVzdDVAZ21haWwuY29tIiwiaWF0IjoxNzM2NDcwMzc3LCJleHAiOjE3MzY0NzM5Nzd9.Be0zLbd5iT00-Zk2UE7QCN8CdoCcPP1bjT6UOB2PjKc'
+    // this.apiService.getData('api/categorias',token).subscribe(
+    //   (response) => {
+    //     console.log('Datos recibidos:', response);
+    //     this.data = response;
+    //   },
+    //   (error) => {
+    //     console.error('Ocurrió un error:', error);
+    //   }
+    // );
 
     // this.apiService.getData('/api/categorias').subscribe(
       // (response) => console.log('GET Response: ', response),
