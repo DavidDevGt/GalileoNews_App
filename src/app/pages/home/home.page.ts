@@ -48,19 +48,18 @@ export class HomePage {
         email: this.email,
         password: this.password
       }
-
-      console.log(this.authToken.getToken());
       
-      this.apiService.postData('auth/login',this.authToken.getToken()).subscribe(
-        (response)=>{console.log('Respuesta del servidor: ', response);
+      
+      this.apiService.postDataLogin('auth/login',dataSend).subscribe(
+        (response)=>{
+          this.authToken.setToken(response.token)
+          console.log('Respuesta del servidor: ', response.message);
+          this.router.navigate(['/dashboard']);
         },
         (error) => { console.error('Error en la peticion: ', error);
         }
       )
     }
 
-    // if (this.emailValid) {
-    //   console.log(this.authToken.getToken());
-    // 
   }
 }

@@ -85,7 +85,7 @@ export class RegisterComponent implements OnInit {
       }
 
       // Registrar nuevo usuario
-      this.apiService.postDataNewUser('auth/register', dataSend).subscribe(
+      this.apiService.postDataLogin('auth/register', dataSend).subscribe(
         (response) => {
           this.authTokenService.setToken(response.token)
           alert(response.message)
