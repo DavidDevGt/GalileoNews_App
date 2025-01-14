@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NgForm } from '@angular/forms';
+import { FormsModule,NgForm } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthTokenService } from 'src/app/services/auth-token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,8 +15,8 @@ import { AuthTokenService } from 'src/app/services/auth-token.service';
 })
 
 export class RegisterComponent implements OnInit {
-  
-  constructor(private apiService: ApiService, private authTokenService: AuthTokenService) { }
+
+  constructor(private apiService: ApiService, private authTokenService: AuthTokenService, private router: Router) { }
   // Valores del formulario
   username: string = '';
   email: string = '';
@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
   passwordTouched: boolean = false;
   confirmPasswordTouched: boolean = false;
 
-  
+
   //Validaciones REGEX
   private userRegex: RegExp = /^[a-zA-Z0-9_]{7,15}$/  //No permite (@, -, .), minLength 7, maxLength 15
   private emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/  //Formato de email valido
@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
     this.passwordTouched = true;
     this.passwordValid = this.passRegex.test(this.password);
   }
-  
+
   // Validacion de que las contraseñas coincidan exactamente
   validateMatchPass(): void {
     this.confirmPasswordTouched = true;
@@ -86,13 +86,13 @@ export class RegisterComponent implements OnInit {
 
       // Registrar nuevo usuario
       this.apiService.postDataNewUser('auth/register', dataSend).subscribe(
-        (response)=>{
+        (response) => {
           this.authTokenService.setToken(response.token)
-          console.log('Usuario registrado exitosamente: ', response);
+          alert(response.message)
+          this.router.navigate(['/home'])
           console.log(this.authTokenService.getToken());
-                    
         },
-        (error)=>{
+        (error) => {
           console.error('Error al registrar usuario: ', error);
         }
       );

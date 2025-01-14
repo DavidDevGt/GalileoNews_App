@@ -14,7 +14,7 @@
         </div>
 
         <!-- Login Form -->
-        <form>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
           <!-- Correo Electrónico -->
           <div class="form-group">
             <label for="email" class="form-label">Correo Electrónico</label>
@@ -23,20 +23,33 @@
               class="form-control"
               id="email"
               placeholder="Ingresa tu correo"
+              name="email"
+              [(ngModel)]="email"
+              [ngClass]="{'is-invalid': !emailValid && submitted}"
               required
-            />
-          </div>
-
-          <!-- Contraseña -->
-          <div class="form-group">
-            <label for="password" class="form-label">Contraseña</label>
-            <input
+              />
+            </div>
+            <!-- Div para manejar los errores, aun no funcional -->
+            <div *ngIf="!emailValid && submitted" class="invalid-feedback">
+              El correo no es valido
+            </div>
+            
+            <!-- Contraseña -->
+            <div class="form-group">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
               type="password"
               class="form-control"
               id="password"
               placeholder="Ingresa tu contraseña"
+              name="password"
+              [(ngModel)]="password"
               required
             />
+          </div>
+          <!-- Div para manejar errores, aun no funcional -->
+          <div *ngIf="!passwordValid && submitted" class="invalid-feedback">
+            La contraseña es incorrecta
           </div>
 
           <!-- Recordar contraseña -->
